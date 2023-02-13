@@ -9,7 +9,7 @@ module.exports.sessionConfig = expressSession({
   resave: false,
   saveUninitialized: false,
   cookie: {
-    secure: process.env.COOKIE_SECURE || false,
+    secure: process.env.COOKIE_SECURE === "true",
     httpOnly: true,
     daysOfCookie: 24 * 3600 * 1000 * DAYS_OF_COOKIE
   },
