@@ -1,5 +1,5 @@
 <h1>Sign up</h1>
-<form action="/login" method="POST">
+<form action="/signup" method="POST">
 <div class="mb-3">
   <label for="email" class="form-label">Email</label>
   <input type="{{user.email}}" type="email" class="form-control  {{#if errors.email}}is-invalid{{/if}}" id="email" name="email" aria-describedby="emailHelp" required>
@@ -34,6 +34,10 @@
     <div class="invalid-feedback">
       {{errors.password}}
     </div>
+  </div>
+  <div class="mb-3">
+    <label for="repeat-password" class="form-label">Repeat password</label>
+    <input type="password" class="form-control" id="repeat-password" name="repeatPassword" required>
   </div>
   <button type="submit" class="btn btn-dark">Create account</button>
 </form>

@@ -11,7 +11,7 @@ module.exports.signup = (req, res, next) => {
 
 
 module.exports.doSignup = (req, res, next) => {
-  res.renderWithErrors = (errors) => {
+  const renderWithErrors = (errors) => {
     const userData = {...req.body}
     delete userData.password
     delete userData.repeatPassword
@@ -23,7 +23,7 @@ module.exports.doSignup = (req, res, next) => {
   }
   const {password, repeatPassword, username, email} = req.body;
   if(password && repeatPassword && password === repeatPassword) {
-    user.findOne({username, email})
+    User.findOne({username, email})
     .then(user => {
       if(user){
         renderWithErrors({email: "Some of your date are in use"})
