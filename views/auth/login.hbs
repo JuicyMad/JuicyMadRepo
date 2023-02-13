@@ -1,0 +1,16 @@
+
+
+<form action="/login" method="POST">
+  <div class="mb-3">
+    <label for="email" class="form-label">Email address</label>
+    <input value="{{user.email}}" type="email" class="form-control {{#if errorMessage}}is-invalid{{/if}}" id="email" name="email" aria-describedby="emailHelp" required>
+    <div class="invalid-feedback">
+      {{errorMessage}}
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" class="form-control" id="password" name="password" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
