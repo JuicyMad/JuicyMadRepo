@@ -22,7 +22,7 @@ mongoose.connection.once("open", () => {
         console.log(`Product with name ${product.name} has been created`);
       });
       console.log(
-        `A total of ${createdProducts.length} drones has been created`
+        `A total of ${createdProducts.length} products has been created`
       );
     })
     .catch((err) => console.error(err))
