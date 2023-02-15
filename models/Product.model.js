@@ -2,8 +2,8 @@ const mongoose = require("mongoose");
 const productSchema = new mongoose.Schema({
   category: {
     type: String,
-    enum: ["Smoothies", "Salads", "Toasts"],
-    default: "Smoothies",
+    enum: ["smoothies", "salads", "toasts"],
+    default: "smoothies",
     required: true,
   },
   name: {
@@ -15,7 +15,7 @@ const productSchema = new mongoose.Schema({
     required: true,
   },
   ingredients: {
-    type: String,
+    type: [String],
     required: true,
   },
   price: {
