@@ -28,6 +28,7 @@ module.exports.doSignup = (req, res, next) => {
       if(user){
         renderWithErrors({email: "Some of your date are in use"})
       } else {
+        req.body.role = "User";
         return User.create(req.body)
         .then(userCreated => {
           res.redirect("/login")

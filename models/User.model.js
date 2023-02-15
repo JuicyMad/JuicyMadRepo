@@ -35,7 +35,15 @@ const EMAIL_PATTERN =
     image:{
       type: String,
       default:  "https://res.cloudinary.com/dzlyhonx9/image/upload/v1676116676/image_r4wz1d.png"
+    }, 
+    role:{
+      type: String,
+      enum: ["Admin", "User"],
+      required: true,
+      default: "User"
     }
+    
+
   },
   {
     timestamps: true,
