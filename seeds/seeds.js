@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Product = require("../models/Product.model");
 
-require("../db.config");
+require("../config/db.config");
 
 const products = require("../poducts.json");
 
