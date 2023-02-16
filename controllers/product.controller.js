@@ -3,7 +3,7 @@ const Product = require("../models/Product.model");
 module.exports.list = (req, res, next) => {
   Product.find()
     .then((products) => {
-      res.render("products/list", { products });
+      res.render("products/list-product", { products });
     })
     .catch((err) => console.log(err));
 };
@@ -11,7 +11,7 @@ module.exports.list = (req, res, next) => {
 module.exports.detail = () => {};
 
 module.exports.create = (req, res, next) => {
-  res.render("products/create-form");
+  res.render("products/create-product");
 };
 
 module.exports.doCreate = (req, res, next) => {
@@ -26,7 +26,7 @@ module.exports.update = (req, res, next) => {
   Product.findById(req.params.id)
     .then((product) => {
       if (product) {
-        res.render("products/update-form", { product });
+        res.render("products/update-product", { product });
       } else {
         res.redirect("/products");
       }
