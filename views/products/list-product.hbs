@@ -1,16 +1,39 @@
 <h1>Available products</h1>
 <ul>
-      {{#each products as |product| }}
+  {{#each products as |product|}}
     <li>
       <a href="/products/{{product.id}}/edit">
-      {{product.name}} / {{product.propierties}} propierties / {{product.ingredients}} ingredients / {{product.prices}} prices / {{product.images}} images
+        {{product.name}}
+        /
+        {{product.propierties}}
+        propierties /
+        {{product.ingredients}}
+        ingredients /
+        {{product.prices}}
+        prices /
+        {{product.images}}
+        images
       </a>
       <form action="/products/{{product.id}}/delete" method="POST">
         <button>Delete</button>
       </form>
+
+      <a href="/products/{{product.slug}}">
+        ver detalle
+      </a>
+
     </li>
   {{/each}}
-    
+
 </ul>
 
-{{product.name}} / {{product.propierties}} propierties / {{product.ingredients}} ingredients / {{product.prices}} prices / {{product.images}} images
+{{product.name}}
+/
+{{product.propierties}}
+propierties /
+{{product.ingredients}}
+ingredients /
+{{product.prices}}
+prices /
+{{product.images}}
+images

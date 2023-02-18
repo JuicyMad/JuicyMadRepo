@@ -8,7 +8,16 @@ module.exports.list = (req, res, next) => {
     .catch((err) => console.log(err));
 };
 
-module.exports.detail = () => {};
+module.exports.detail = (req, res, next) => {
+  const slug = req.params.slug;
+
+  Product.findOne({ slug: slug })
+
+    .then((productFound) => {
+      res.render("products/detail-product", { product: productFound });
+    })
+    .catch((err) => console.log(err));
+};
 
 module.exports.create = (req, res, next) => {
   res.render("products/create-product");
