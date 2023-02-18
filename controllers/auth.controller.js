@@ -51,10 +51,10 @@ module.exports.login = (req, res, next) => {
  res.render("auth/login")
 }
 
-const doLoginWithStrategy = (req, res, next, strategy = "local-auth-juicyMad") => {
+const doLoginWithStrategy = (req, res, next, strategy = "local-auth") => {
   const {email, password} = req.body;
 
-  if(strategy === "local-auth-juicyMad") {
+  if(strategy === "local-auth") {
 
     if(!email || !password) {
       res.render("auth/login", {errorMessage: ERROR_MESSAGE})
@@ -83,6 +83,9 @@ const doLoginWithStrategy = (req, res, next, strategy = "local-auth-juicyMad") =
 
 module.exports.doLogin = (req, res, next) => {
   doLoginWithStrategy(req, res, next)
+}
+module.exports.doLoginGoogle = (req, res, next) => {
+  doLoginWithStrategy(req, res, next, 'google-auth')
 }
 module.exports.doLogout = (req, res, next) => {
   req.session.destroy();

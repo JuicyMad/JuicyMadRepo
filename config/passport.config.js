@@ -1,5 +1,7 @@
+const { default: mongoose } = require("mongoose");
 const passport = require("passport");
-const LocalStrategy = require("passport-local").Strategy;
+const LocalStrategy = require('passport-local').Strategy;
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const User = require("../models/User.model");
 
 passport.serializeUser((user, next) => {
@@ -17,7 +19,7 @@ passport.deserializeUser((id, next) => {
 const ERROR_MESSAGE = "Some of your data are incorrect";
 
 passport.use(
-  "local-auth-juicyMad",
+  "local-auth",
   new LocalStrategy(
     {
       usernameField: "email",
@@ -44,5 +46,46 @@ passport.use(
   )
 );
 
+
+
 module.exports.ERROR_MESSAGE = ERROR_MESSAGE;
 
+passport.use('google-auth', new GoogleStrategy(
+  {
+    clientID: process.env.GOOGLE_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    callbackURL: '/auth/google/callback'
+  },
+  (accessToken, refreshToken, profile, next) => {
+    const googleID = profile.id;
+    const name = profile.displayName;
+    const email = profile.emails && profile.emails[0].value || undefined;
+
+    if(googleID && email) {
+      User.findOne({
+        $or: [
+          {email},
+          {googleID}
+        ]
+      })
+      .then(user => {
+        if(user) {
+          next(null, user)
+        } else {
+          return User.create({
+            name, 
+            email,
+            password: mongoose.Types.ObjectId(),
+            googleID
+          })
+          .then(userCreated => {
+            next(null, userCreated)
+          })
+        }
+      })
+      .catch(err =>(err))
+    } else {
+      next(null, false, { error: "Error connecting with Google juicyMad"})
+    }
+  }
+))

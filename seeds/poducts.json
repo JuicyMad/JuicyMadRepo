@@ -13,7 +13,7 @@
       "miel"
     ],
 
-    "img": "url",
+    "img": "https://res.cloudinary.com/dbwcyzpiu/image/upload/v1676719310/JuicyMad/smoothie-de-frutos-rojos_vrt9vi.jpg",
     "price": "7.50",
     "propierties": "Las fresas son unas frutas bien toleradas por los diabéticos y además ayuda a combatir la anemia. Sus beneficios refrescantes las convierten en un alimento ideal en épocas de mayor calor."
   },
@@ -24,7 +24,7 @@
     "category": "smoothies",
     "ingredients": ["aguacate", "plátno", "manzana", "leche", "miel"],
 
-    "img": "url",
+    "img": "https://res.cloudinary.com/dbwcyzpiu/image/upload/v1676726291/JuicyMad/rs_1600x1071-170605144355-bigstock-Green-Smoothie-With-Avocado-187771960_kvuhbx.jpg",
     "price": "7.50",
     "propierties": "El aguacate impulsa el crecimiento y reparación de la masa muscular, por lo que es popular entre deportistas, esto gracias a su aporte de proteínas, potasio, zinc y más. antiinflamatorio de articulaciones muy rico en ácido fólico.Reduce colesterol y triglicéridos y aumenta hasta en un 11% el colesterol HDL, es decir, el bueno."
   },
@@ -39,7 +39,7 @@
       "leche de soja",
       "sirope de agave"
     ],
-    "img": "url",
+    "img": "https://res.cloudinary.com/dbwcyzpiu/image/upload/v1676719583/JuicyMad/Smoothie-de-ara%CC%81ndanos-y-pera-1_vk1gtl.jpg",
     "price": "7.50",
     "propierties": "Los arándanos rojos son unas frutas especialmente ricas en antioxidantes. Además, ayudan a prevenir enfermedades cardiovasculares, diferentes tipos de cáncer y son útiles para mejorar la circulación y combatir el colesterol."
   },
@@ -50,7 +50,7 @@
     "category": "smoothies",
     "ingredients": ["mango", "fresas", "plátano", "leche de coco"],
 
-    "img": "url",
+    "img": "https://res.cloudinary.com/dbwcyzpiu/image/upload/v1676719853/JuicyMad/smoothie-de-fresa_fgbtqy.avif",
     "price": "7.50",
     "propierties": "El mango previene el asma y mejora nuestra salud ocular. Gracias a los betacarotenos presentes en el mango, nuestro organismo es capaz de prevenir ciertas formas de cáncer, especialmente el cáncer de próstata. Este antioxidante también ha demostrado tener un efecto protector en la aparición de cáncer de colon."
   },
@@ -67,7 +67,7 @@
       "chocolate negro",
       "miel"
     ],
-    "img": "url",
+    "img": "https://res.cloudinary.com/dbwcyzpiu/image/upload/v1676720167/JuicyMad/636721878103802503_j8lbac.jpg",
     "price": "7.50",
     "propierties": "El plátano es fuente de carbohidratos presentando un gran aporte de vitaminas. Fuente de minerales. Protege nuestro corazón. Reduce la fatiga y el cansancio. Previene la anemia. Estimula el sistema nervioso. Regula la función intestinal. El chocolate negro ayuda a disminuir la presión arterial; es fuente de fibra. Produce sensación de bienestar. Estimula el sistema nervioso central. Previene el envejecimiento prematuro de la piel."
   },
@@ -77,7 +77,7 @@
     "slug": "smoothie-vitaminic-pro",
     "category": "smoothies",
     "ingredients": ["zanahoria", "manzana", "limón", "naranja"],
-    "img": "url",
+    "img": "https://res.cloudinary.com/dbwcyzpiu/image/upload/v1676720330/JuicyMad/7846_Succo_Mela-Carote-Zenzero_Web2-450x450_rgwzdm.jpg",
     "price": "7.50",
     "propierties": "En este zumo, además de fibra, encontrarás un excelente aliado para tu sistema inmunológico. Pruébalo cuando te sientas un poco decaído y ¡verás como resucitas! La zanahoria es rica en vitamina A, lo que ayuda a prevenir enfermedades en los ojos, mejora la piel y fortalece el sistema inmunitario. El limón es rico en vitamina C y es un excelente limpiador de tu organismo. La manzana es rica en fósforo, lo que favorece el sistema nervioso. También contribuye a bajar la fiebre."
   },
@@ -94,7 +94,7 @@
       "bebida de manzana",
       "azúcar morereno"
     ],
-    "img": "url",
+    "img": "https://res.cloudinary.com/dbwcyzpiu/image/upload/v1676720634/JuicyMad/golden_milk_wwb5ck.jpg",
     "price": "7.50",
     "propierties": "Este zumo tiene sabor fuerte, lo sabemos, pero va muy bien porque refuerza el sistema inmunológico. La cúrcuma funciona como un antidepresivo natural. Es un potente antiinflamatorio y además trata trastornos hepáticos. El jengibre ayuda a tratar las náuseas, alivia dolores articulares y musculares. Mejora la función cerebral y combate las infeciones por hongos."
   },
@@ -110,7 +110,7 @@
       "semillas de chía",
       "pan de maiz"
     ],
-    "img": "url",
+    "img": "https://res.cloudinary.com/dbwcyzpiu/image/upload/v1676721766/JuicyMad/tostada-de-requeson-con-aguacate_osfbxo.jpg  ",
     "price": "4.50",
     "propierties": "El tomate Cherry previene de la ceguera nocturna. Además ayudan a prevenir diversas enfermedades visuales. Coniene vitamina A, esencial para la piel y los dientes."
   },
@@ -122,7 +122,7 @@
     "ingredients": [
       "elaborada con nuestra deliciosa receta casera y además añade un toque extra de cualquiera de nuestra selección de frutas."
     ],
-    "img": "url",
+    "img": "https://res.cloudinary.com/dbwcyzpiu/image/upload/v1676722080/JuicyMad/board-1239114_1920-1280x620_qv6ey2.jpg",
     "price": "4.50",
     "propierties": "La crema de cacahuete es rica en grasas beneficiosas para la salud cardiovascular y una buena fuente de proteínas y fibra, así como de vitamina (B y E) y minerales como el hierro y el potasio"
   },
@@ -132,7 +132,7 @@
     "slug": "Toast-de-crema-de-cacahuete-artesana-con-plátano-y-miel",
     "category": "toasts",
     "ingredients": ["receta casera de crema de cacahuete", "plátano", "miel"],
-    "img": "url",
+    "img": "https://res.cloudinary.com/dbwcyzpiu/image/upload/v1676722293/JuicyMad/tostada-de-mantequilla-de-cacahuete-y-platano1_onrlku.jpg",
     "price": "4.50",
     "propierties": "La miel contiene una gran cantidad de nutrientes saludables; es rica en antioxidantes que bajan la presión arterial; ayuda a reducir el colesterol malo (LDL) y los triglicéridos. Presenta propiedades de cauterización y recuperación de piel dañada por quemaduras."
   },
@@ -147,7 +147,7 @@
       "nueces o frutos secos variado",
       "miel"
     ],
-    "img": "url",
+    "img": "https://res.cloudinary.com/dbwcyzpiu/image/upload/v1676722668/JuicyMad/tostada-de-queso-pera-y-frutos-secos_dgkou1.jpg",
     "price": "4.50",
     "propierties": "La pera es diurética, evita la retención de líquidos y sus pectinas ayudan a reducir el colesterol. Su bajo índice glucémico la hace adecuada para personas con diabetes. Es fuente de ácido fólico y vitamina C, imprescindible para absorber el hierro."
   },
@@ -157,17 +157,17 @@
     "slug": "Tosta-de-manzana-crema-de-cacahuete-y-canela",
     "category": "toasts",
     "ingredients": ["manzana", "receta casera de crema de cacahuete", "canela"],
-    "img": "url",
+    "img": "https://res.cloudinary.com/dbwcyzpiu/image/upload/v1676722930/JuicyMad/desayuno-vegano-tostadas-mantequilla-cacahuete-manzana-asada4_bfqy6y.jpg",
     "price": "4.50",
     "propierties": "La manzana nos aporta vitaminas B1 y B6, que evitan el agotamiento mental y refuerzan la memoria. También es fuente de fósforo, mineral presente en los fosfolípidos del cerebro, potasio y sodio, indispensables para la conducción nerviosa. Para fortalecer pelo y uñas."
   },
 
   {
-    "name": " Greenbowl de huevo duro , aguacate y parmesano.",
+    "name": " Greenbowl de huevo duro, pollo, aguacate y parmesano.",
     "slug": " Bowl-de-huevo-duro-aguacate-y-parmesano.",
     "category": "salads",
-    "ingredients": ["manzana", "receta casera de crema de cacahuete", "canela"],
-    "img": "url",
+    "ingredients": ["huevo cocido", "queso parmesano", "aguacate", "pollo"],
+    "img": "https://res.cloudinary.com/dbwcyzpiu/image/upload/v1676723408/JuicyMad/ensalada_de_huevo_con_aguacate_crop1623341514950.jpeg_172596871_sf0bqk.jpg",
     "price": "4.50",
     "propierties": "La manzana nos aporta vitaminas B1 y B6, que evitan el agotamiento mental y refuerzan la memoria. También es fuente de fósforo, mineral presente en los fosfolípidos del cerebro, potasio y sodio, indispensables para la conducción nerviosa. Para fortalecer pelo y uñas."
   }
