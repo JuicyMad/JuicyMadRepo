@@ -41,7 +41,13 @@ const EMAIL_PATTERN =
       enum: ["Admin", "User"],
       required: true,
       default: "User"
-    }
+    },
+    cart:{
+      type: [mongoose.Types.ObjectId],
+      ref: "Cart",
+      required: true
+    },
+
     
 
   },

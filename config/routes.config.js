@@ -5,8 +5,9 @@ const upload = require("./storage.config"); ///
 
 const authController = require("../controllers/auth.controller");
 const userController = require("../controllers/user.controller");
-const authMiddleware = require("../middlewares/auth.middlewares");
 const productController = require("../controllers/product.controller");
+const cartController = require("../controllers/cart.controller");
+const authMiddleware = require("../middlewares/auth.middlewares");
 const adminMiddleware = require("../middlewares/admin.middleware");
 
 
@@ -56,5 +57,10 @@ router.post("/products/:id/edit",authMiddleware.isAuthenticated, adminMiddleware
 router.post("/products/:id/delete", authMiddleware.isAuthenticated, adminMiddleware.isAdmin,productController.delete);
 router.get("/products/:slug",productController.detail);
 
+
+
+// cart
+router.get("/cart", cartController.cart)
+router.post("/:id/addToCart", cartController.editCart)
 
 module.exports = router;
