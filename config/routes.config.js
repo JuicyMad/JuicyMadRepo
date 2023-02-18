@@ -1,8 +1,9 @@
 const router = require("express").Router();
 const authController = require("../controllers/auth.controller");
 const userController = require("../controllers/user.controller");
-const authMiddleware = require("../middlewares/auth.middlewares");
 const productController = require("../controllers/product.controller");
+const cartController = require("../controllers/cart.controller");
+const authMiddleware = require("../middlewares/auth.middlewares");
 const adminMiddleware = require("../middlewares/admin.middleware");
 /* Main route */
 router.get("/", (req, res, next) => res.send("JUICY WORLD"));
@@ -30,5 +31,10 @@ router.get("/products/:id/edit", authMiddleware.isAuthenticated, adminMiddleware
 router.post("/products/:id/edit",authMiddleware.isAuthenticated, adminMiddleware.isAdmin, productController.doUpdate);
 router.post("/products/:id/delete", authMiddleware.isAuthenticated, adminMiddleware.isAdmin,productController.delete);
 router.get("/products/:slug",productController.detail);
+
+
+// cart
+router.get("/cart", cartController.cart)
+router.post("/:id/addToCart", cartController.editCart)
 
 module.exports = router;
