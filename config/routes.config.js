@@ -29,5 +29,6 @@ router.post("/products/create",authMiddleware.isAuthenticated, adminMiddleware.i
 router.get("/products/:id/edit", authMiddleware.isAuthenticated, adminMiddleware.isAdmin,productController.update);
 router.post("/products/:id/edit",authMiddleware.isAuthenticated, adminMiddleware.isAdmin, productController.doUpdate);
 router.post("/products/:id/delete", authMiddleware.isAuthenticated, adminMiddleware.isAdmin,productController.delete);
+router.get("/products/:slug",productController.detail);
 
 module.exports = router;
