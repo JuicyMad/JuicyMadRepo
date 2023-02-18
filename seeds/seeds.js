@@ -3,7 +3,7 @@ const Product = require("../models/Product.model");
 
 require("../config/db.config");
 
-const products = require("../poducts.json");
+const products = require("./poducts.json");
 
 mongoose.connection.once("open", () => {
   console.info(
