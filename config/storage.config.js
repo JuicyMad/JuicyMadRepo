@@ -3,7 +3,7 @@ const cloudinary = require("cloudinary").v2;
 const CloudinaryStorage =
   require("multer-storage-cloudinary").CloudinaryStorage;
 
-// Configurar cloudinary
+// CLOUDINARY BASIC CONFIG
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_NAME,
