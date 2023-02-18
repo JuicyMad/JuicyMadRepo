@@ -33,37 +33,14 @@ router.get("/profile", authMiddleware.isAuthenticated, userController.profile);
 
 // products
 
-router.get("/products", authMiddleware.isAuthenticated, productController.list);
-router.get(
-  "/products/create",
-  authMiddleware.isAuthenticated,
-  adminMiddleware.isAdmin,
-  productController.create
-);
-router.post(
-  "/products/create",
-  authMiddleware.isAuthenticated,
-  adminMiddleware.isAdmin,
-  productController.doCreate
-);
-router.get(
-  "/products/:id/edit",
-  authMiddleware.isAuthenticated,
-  adminMiddleware.isAdmin,
-  productController.update
-);
-router.post(
-  "/products/:id/edit",
-  authMiddleware.isAuthenticated,
-  adminMiddleware.isAdmin,
-  productController.doUpdate
-);
-router.post(
-  "/products/:id/delete",
-  authMiddleware.isAuthenticated,
-  adminMiddleware.isAdmin,
-  productController.delete
-);
-router.get("/products/:slug", productController.detail);
+
+router.get("/products", productController.list);
+router.get("/products/create", authMiddleware.isAuthenticated, adminMiddleware.isAdmin, productController.create);
+router.post("/products/create",authMiddleware.isAuthenticated, adminMiddleware.isAdmin, productController.doCreate);
+router.get("/products/:id/edit", authMiddleware.isAuthenticated, adminMiddleware.isAdmin,productController.update);
+router.post("/products/:id/edit",authMiddleware.isAuthenticated, adminMiddleware.isAdmin, productController.doUpdate);
+router.post("/products/:id/delete", authMiddleware.isAuthenticated, adminMiddleware.isAdmin,productController.delete);
+router.get("/products/:slug",productController.detail);
+
 
 module.exports = router;
