@@ -1,4 +1,6 @@
 const router = require("express").Router();
+const upload = require("./storage.config"); ///
+
 const authController = require("../controllers/auth.controller");
 const userController = require("../controllers/user.controller");
 const authMiddleware = require("../middlewares/auth.middlewares");
@@ -9,10 +11,18 @@ router.get("/", (req, res, next) => res.send("JUICY WORLD"));
 
 // auth
 router.get("/signup", authMiddleware.isNotAuthenticated, authController.signup);
-router.post("/signup",authMiddleware.isNotAuthenticated, authController.doSignup);
+router.post(
+  "/signup",
+  authMiddleware.isNotAuthenticated,
+  authController.doSignup
+);
 
 router.get("/login", authMiddleware.isNotAuthenticated, authController.login);
-router.post("/login", authMiddleware.isNotAuthenticated,authController.doLogin);
+router.post(
+  "/login",
+  authMiddleware.isNotAuthenticated,
+  authController.doLogin
+);
 
 router.get("/logout", authMiddleware.isAuthenticated, authController.doLogout);
 
@@ -23,12 +33,37 @@ router.get("/profile", authMiddleware.isAuthenticated, userController.profile);
 
 // products
 
-router.get("/products",  authMiddleware.isAuthenticated, productController.list);
-router.get("/products/create", authMiddleware.isAuthenticated, adminMiddleware.isAdmin, productController.create);
-router.post("/products/create",authMiddleware.isAuthenticated, adminMiddleware.isAdmin, productController.doCreate);
-router.get("/products/:id/edit", authMiddleware.isAuthenticated, adminMiddleware.isAdmin,productController.update);
-router.post("/products/:id/edit",authMiddleware.isAuthenticated, adminMiddleware.isAdmin, productController.doUpdate);
-router.post("/products/:id/delete", authMiddleware.isAuthenticated, adminMiddleware.isAdmin,productController.delete);
-router.get("/products/:slug",productController.detail);
+router.get("/products", authMiddleware.isAuthenticated, productController.list);
+router.get(
+  "/products/create",
+  authMiddleware.isAuthenticated,
+  adminMiddleware.isAdmin,
+  productController.create
+);
+router.post(
+  "/products/create",
+  authMiddleware.isAuthenticated,
+  adminMiddleware.isAdmin,
+  productController.doCreate
+);
+router.get(
+  "/products/:id/edit",
+  authMiddleware.isAuthenticated,
+  adminMiddleware.isAdmin,
+  productController.update
+);
+router.post(
+  "/products/:id/edit",
+  authMiddleware.isAuthenticated,
+  adminMiddleware.isAdmin,
+  productController.doUpdate
+);
+router.post(
+  "/products/:id/delete",
+  authMiddleware.isAuthenticated,
+  adminMiddleware.isAdmin,
+  productController.delete
+);
+router.get("/products/:slug", productController.detail);
 
 module.exports = router;
