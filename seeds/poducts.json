@@ -24,7 +24,7 @@
     "category": "smoothies",
     "ingredients": ["aguacate", "plátno", "manzana", "leche", "miel"],
 
-    "img": "url",
+    "img": "https://res.cloudinary.com/dbwcyzpiu/image/upload/v1676726291/JuicyMad/rs_1600x1071-170605144355-bigstock-Green-Smoothie-With-Avocado-187771960_kvuhbx.jpg",
     "price": "7.50",
     "propierties": "El aguacate impulsa el crecimiento y reparación de la masa muscular, por lo que es popular entre deportistas, esto gracias a su aporte de proteínas, potasio, zinc y más. antiinflamatorio de articulaciones muy rico en ácido fólico.Reduce colesterol y triglicéridos y aumenta hasta en un 11% el colesterol HDL, es decir, el bueno."
   },
