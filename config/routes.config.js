@@ -23,7 +23,7 @@ router.get("/profile", authMiddleware.isAuthenticated, userController.profile);
 
 // products
 
-router.get("/products",  authMiddleware.isAuthenticated, productController.list);
+router.get("/products", productController.list);
 router.get("/products/create", authMiddleware.isAuthenticated, adminMiddleware.isAdmin, productController.create);
 router.post("/products/create",authMiddleware.isAuthenticated, adminMiddleware.isAdmin, productController.doCreate);
 router.get("/products/:id/edit", authMiddleware.isAuthenticated, adminMiddleware.isAdmin,productController.update);
