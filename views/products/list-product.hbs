@@ -14,7 +14,7 @@
       {{product.images}}
       images
     </a>
-    <form action="{{product.id}}/addToCart" method="POST">
+    <form action="/{{product.id}}/addToCart" method="POST">
       <button class="cart-btn">Añadir al Carrito</button>
     </form>
     {{#isAdmin currentUser=../currentUser}}

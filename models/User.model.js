@@ -43,13 +43,9 @@ const EMAIL_PATTERN =
       default: "User"
     },
     cart:{
-      type: [mongoose.Types.ObjectId],
-      ref: "Cart",
-      required: true
+      type: mongoose.Types.ObjectId,
+      ref: "Cart"
     },
-
-    
-
   },
   {
     timestamps: true,

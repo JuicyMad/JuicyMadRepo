@@ -1,4 +1,5 @@
 const User = require("../models/User.model");
+const Cart = require("../models/Cart.model");
 const mongoose = require("mongoose");
 const passport = require("passport");
 const { ERROR_MESSAGE } = require("../config/passport.config");
@@ -24,24 +25,40 @@ module.exports.doSignup = (req, res, next) => {
   const {password, repeatPassword, username, email} = req.body;
   if(password && repeatPassword && password === repeatPassword) {
     User.findOne({username, email})
-    .then(user => {
-      if(user){
-        renderWithErrors({email: "Some of your date are in use"})
-      } else {
-        req.body.role = "User";
-        return User.create(req.body)
-        .then(userCreated => {
-          res.redirect("/login")
-        })
-      }
-    })
-    .catch(err =>{
-      if(err instanceof mongoose.Error.ValidationError) {
-        renderWithErrors(err.errors)
-      } else {
-        next(err)
-      }
-    })
+      .then(user => {
+        if(user){
+          renderWithErrors({email: "Some of your date are in use"})
+        } else {
+          req.body.role = "User";
+          console.log('****** ', req.body);
+          return User.create(req.body)
+            .then(userCreated => {
+              console.log('*******', userCreated);
+              Cart.create({user: userCreated._id})
+                .then(cartCreated => {
+                  userCreated.cart = cartCreated._id;
+                  userCreated.save()
+                    .then(userUpdated => {
+                      console.log(userUpdated);
+                      res.redirect("/login");
+                    })
+                    .catch(next)
+                })
+                .catch(err => {
+                  console.log(err);
+                  next(err);
+                })
+            })
+        }
+      })
+      .catch(err =>{
+        console.log('****** ', err);
+        if(err instanceof mongoose.Error.ValidationError) {
+          renderWithErrors(err.errors)
+        } else {
+          next(err)
+        }
+      })
   } else {
      renderWithErrors({password: "Passwords do not match"})
   }
