@@ -30,7 +30,7 @@ router.post(
 
 router.get("/login", authMiddleware.isNotAuthenticated, authController.login);
 router.post(
-  "/login",
+ "/login",
   authMiddleware.isNotAuthenticated,
   authController.doLogin
 );
@@ -61,6 +61,6 @@ router.get("/products/:slug",productController.detail);
 
 // cart
 router.get("/cart", cartController.cart)
-router.post("/:id/addToCart", cartController.editCart)
+router.post("/:id/addToCart", authMiddleware.isAuthenticated, cartController.editCart)
 
 module.exports = router;

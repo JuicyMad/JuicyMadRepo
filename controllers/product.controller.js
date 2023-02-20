@@ -28,7 +28,7 @@ module.exports.doCreate = (req, res, next) => {
     .then((product) => {
       res.redirect("/products");
     })
-    .catch((err) => console.err(err));
+    .catch((err) => console.log(err));
 };
 
 module.exports.update = (req, res, next) => {
