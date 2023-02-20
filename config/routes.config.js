@@ -30,7 +30,7 @@ router.post(
 
 router.get("/login", authMiddleware.isNotAuthenticated, authController.login);
 router.post(
-  "/login",
+ "/login",
   authMiddleware.isNotAuthenticated,
   authController.doLogin
 );
@@ -44,7 +44,7 @@ router.get("/profile", authMiddleware.isAuthenticated, userController.profile);
 
 //Sign with google
 router.get('/login/google',passport.authenticate('google-auth', { scope: GOOGLE_SCOPES }))
-router.post('/local-auth/google/callback', authController.doLoginGoogle)
+router.get('/auth/google/callback', authController.doLoginGoogle)
 
 // products
 
@@ -61,6 +61,6 @@ router.get("/products/:slug",productController.detail);
 
 // cart
 router.get("/cart", cartController.cart)
-router.post("/:id/addToCart", cartController.editCart)
+router.post("/:id/addToCart", authMiddleware.isAuthenticated, cartController.editCart)
 
 module.exports = router;
