@@ -13,7 +13,6 @@ module.exports.doSignup = (req, res, next) => {
     const userData = { ...req.body };
     delete userData.password;
     delete userData.repeatPassword;
-
     res.render("auth/signup", {
       user: userData,
       errors,
@@ -43,26 +42,17 @@ module.exports.doSignup = (req, res, next) => {
     renderWithErrors({ password: "Passwords do not match" });
   }
 };
-
 module.exports.login = (req, res, next) => {
   res.render("auth/login");
 };
-
-const doLoginWithStrategy = (
-  req,
-  res,
-  next,
-  strategy = "local-auth-juicyMad"
-) => {
+const doLoginWithStrategy = (req, res, next, strategy = "local-auth") => {
   const { email, password } = req.body;
-
-  if (strategy === "local-auth-juicyMad") {
+  if (strategy === "local-auth") {
     if (!email || !password) {
       res.render("auth/login", { errorMessage: ERROR_MESSAGE });
       return;
     }
   }
-
   passport.authenticate(strategy, (err, user, validations) => {
     if (err) {
       next(err);
@@ -82,9 +72,11 @@ const doLoginWithStrategy = (
     }
   })(req, res, next);
 };
-
 module.exports.doLogin = (req, res, next) => {
   doLoginWithStrategy(req, res, next);
+};
+module.exports.doLoginGoogle = (req, res, next) => {
+  doLoginWithStrategy(req, res, next, "google-auth");
 };
 module.exports.doLogout = (req, res, next) => {
   req.session.destroy();
