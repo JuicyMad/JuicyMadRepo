@@ -1,4 +1,4 @@
-<h1>Sign up</h1>
+<h1>Crear cuenta</h1>
 <form action="/signup" method="POST">
 <div class="mb-3">
   <label for="email" class="form-label">Email</label>
@@ -8,39 +8,39 @@
     </div>
 </div>
   <div class="mb-3">
-    <label for="username" class="form-label">Username</label>
+    <label for="username" class="form-label">Nombre de usuario</label>
     <input value="{{user.username}}" class="form-control {{#if errors.username}}is-invalid{{/if}}" id="username" name="username" required>
     <div class="invalid-feedback">
       {{errors.username}}
     </div>
   </div>
   <div class="mb-3">
-    <label for="firstName" class="form-label">First name</label>
+    <label for="firstName" class="form-label">Nombre</label>
     <input value="{{user.firstName}}" class="form-control {{#if errors.firstName}}is-invalid{{/if}}" id="firstName" name="firstName" required>
     <div class="invalid-feedback">
       {{errors.firstName}}
     </div>
   </div>
   <div class="mb-3">
-    <label for="lastName" class="form-label">Last name</label>
+    <label for="lastName" class="form-label">Apellidos</label>
     <input value="{{user.lastName}}" class="form-control {{#if errors.lastName}}is-invalid{{/if}}" id="lastName" name="lastName" required>
     <div class="invalid-feedback">
       {{errors.lastName}}
     </div>
   </div>
   <div class="mb-3">
-    <label for="password" class="form-label">Password</label>
+    <label for="password" class="form-label">Contraseña</label>
     <input type="password" class="form-control {{#if errors.password}}is-invalid{{/if}}" id="password" name="password" required>
     <div class="invalid-feedback">
       {{errors.password}}
     </div>
   </div>
   <div class="mb-3">
-    <label for="repeat-password" class="form-label">Repeat password</label>
+    <label for="repeat-password" class="form-label">Repita Contraseña</label>
     <input type="password" class="form-control" id="repeat-password" name="repeatPassword" required>
   </div>
-  <button type="submit" class="btn btn-dark">Create account</button>
-  <a href="/login/google" class="btn btn-outline-primary">Sign in with Google</a>
+  <button type="submit" class="btn btn-dark">Crear cuenta</button>
+  <a href="/login/google" class="btn btn-outline-primary">Crear cuenta con Google</a>
   </form>
 
 
