@@ -72,7 +72,6 @@ const doLoginWithStrategy = (req, res, next, strategy = "local-auth") => {
   const {email, password} = req.body;
 
   if(strategy === "local-auth") {
-
     if(!email || !password) {
       res.render("auth/login", {errorMessage: ERROR_MESSAGE})
       return;
@@ -82,16 +81,14 @@ const doLoginWithStrategy = (req, res, next, strategy = "local-auth") => {
   passport.authenticate(strategy,  (err, user, validations) => {
     if (err) {
       next(err)
-      
      } else if(!user) {
       res.render("auth/login", {user: {email}, errorMessage: validations.error})
-
-    } else{
+    } else {
       req.login(user, (loginError) => {
         if(loginError){
           next(loginError)
         } else {
-          res.redirect("/home")
+          res.redirect("/login")
         }
       })
     }

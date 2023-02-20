@@ -58,8 +58,10 @@ passport.use('google-auth', new GoogleStrategy(
   },
   (accessToken, refreshToken, profile, next) => {
     const googleID = profile.id;
-    const name = profile.displayName;
+    const username = profile.displayName;
     const email = profile.emails && profile.emails[0].value || undefined;
+    const firstName = profile.name.givenName;
+    const lastName = profile.name.familyName;
 
     if(googleID && email) {
       User.findOne({
@@ -72,8 +74,11 @@ passport.use('google-auth', new GoogleStrategy(
         if(user) {
           next(null, user)
         } else {
+          console.log('create')
           return User.create({
-            name, 
+            username,
+            firstName,
+            lastName,
             email,
             password: mongoose.Types.ObjectId(),
             googleID
@@ -83,7 +88,10 @@ passport.use('google-auth', new GoogleStrategy(
           })
         }
       })
-      .catch(err =>(err))
+      .catch(err => {
+        console.log('*** ERR ', err);
+        next(err);
+      })
     } else {
       next(null, false, { error: "Error connecting with Google juicyMad"})
     }
