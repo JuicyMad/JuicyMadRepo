@@ -44,7 +44,7 @@ router.get("/profile", authMiddleware.isAuthenticated, userController.profile);
 
 //Sign with google
 router.get('/login/google',passport.authenticate('google-auth', { scope: GOOGLE_SCOPES }))
-router.post('/local-auth/google/callback', authController.doLoginGoogle)
+router.get('/auth/google/callback', authController.doLoginGoogle)
 
 // products
 

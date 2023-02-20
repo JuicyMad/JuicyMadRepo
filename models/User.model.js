@@ -39,17 +39,12 @@ const EMAIL_PATTERN =
     role:{
       type: String,
       enum: ["Admin", "User"],
-      required: true,
       default: "User"
     },
     cart:{
       type: [mongoose.Types.ObjectId],
       ref: "Cart",
-      required: true
     },
-
-    
-
   },
   {
     timestamps: true,
