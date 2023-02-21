@@ -1,7 +1,7 @@
 const { default: mongoose } = require("mongoose");
 const passport = require("passport");
-const LocalStrategy = require('passport-local').Strategy;
-const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const LocalStrategy = require("passport-local").Strategy;
+const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const User = require("../models/User.model");
 
 passport.serializeUser((user, next) => {
@@ -29,12 +29,11 @@ passport.use(
       User.findOne({ email })
         .then((user) => {
           if (!user) {
-            next(null, false, { error: "ERROR_MESSAGE" });
+            next(null, false, { error: "Email or password are incorrect" });
           } else {
-            return user.checkPassword(password)
-            .then((match) => {
+            return user.checkPassword(password).then((match) => {
               if (!match) {
-                next(null, false, { error: "ERROR_MESSAGE" });
+                next(null, false, { error: "Email or password are incorrect" });
               } else {
                 next(null, user);
               }
@@ -50,50 +49,41 @@ passport.use(
 
 module.exports.ERROR_MESSAGE = ERROR_MESSAGE;
 
-passport.use('google-auth', new GoogleStrategy(
-  {
-    clientID: process.env.GOOGLE_CLIENT_ID,
-    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: '/auth/google/callback'
-  },
-  (accessToken, refreshToken, profile, next) => {
-    const googleID = profile.id;
-    const username = profile.displayName;
-    const email = profile.emails && profile.emails[0].value || undefined;
-    const firstName = profile.name.givenName;
-    const lastName = profile.name.familyName;
+passport.use(
+  "google-auth",
+  new GoogleStrategy(
+    {
+      clientID: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      callbackURL: "/auth/google/callback",
+    },
+    (accessToken, refreshToken, profile, next) => {
+      const googleID = profile.id;
+      const name = profile.displayName;
+      const email = (profile.emails && profile.emails[0].value) || undefined;
 
-    if(googleID && email) {
-      User.findOne({
-        $or: [
-          {email},
-          {googleID}
-        ]
-      })
-      .then(user => {
-        if(user) {
-          next(null, user)
-        } else {
-          console.log('create')
-          return User.create({
-            username,
-            firstName,
-            lastName,
-            email,
-            password: mongoose.Types.ObjectId(),
-            googleID
+      if (googleID && email) {
+        User.findOne({
+          $or: [{ email }, { googleID }],
+        })
+          .then((user) => {
+            if (user) {
+              next(null, user);
+            } else {
+              return User.create({
+                name,
+                email,
+                password: mongoose.Types.ObjectId(),
+                googleID,
+              }).then((userCreated) => {
+                next(null, userCreated);
+              });
+            }
           })
-          .then(userCreated => {
-            next(null, userCreated)
-          })
-        }
-      })
-      .catch(err => {
-        console.log('*** ERR ', err);
-        next(err);
-      })
-    } else {
-      next(null, false, { error: "Error connecting with Google juicyMad"})
+          .catch((err) => err);
+      } else {
+        next(null, false, { error: "Error connecting with Google juicyMad" });
+      }
     }
-  }
-))
+  )
+);

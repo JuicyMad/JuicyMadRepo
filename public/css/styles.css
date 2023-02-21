@@ -1,8 +1,12 @@
-nav{
+nav {
   background-color: #a4ad48 !important;
 }
 
-body{
-background-color: white;
- font-family: 'Roboto', sans-serif;
+body {
+  background-color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+footer {
+  background-color: #a4ad48 !important;
 }

@@ -5,18 +5,15 @@ const passport = require("passport");
 const { ERROR_MESSAGE } = require("../config/passport.config");
 const { Strategy } = require("passport-local");
 
-
 module.exports.signup = (req, res, next) => {
-  res.render("auth/signup")
-}
-
+  res.render("auth/signup");
+};
 
 module.exports.doSignup = (req, res, next) => {
   const renderWithErrors = (errors) => {
-    const userData = {...req.body}
-    delete userData.password
-    delete userData.repeatPassword
-
+    const userData = { ...req.body };
+    delete userData.password;
+    delete userData.repeatPassword;
     res.render("auth/signup", {
       user: userData,
       errors
@@ -60,10 +57,9 @@ module.exports.doSignup = (req, res, next) => {
         }
       })
   } else {
-     renderWithErrors({password: "Passwords do not match"})
+    renderWithErrors({ password: "Passwords do not match" });
   }
-}
- 
+};
 module.exports.login = (req, res, next) => {
  res.render("auth/login")
 }
@@ -77,24 +73,22 @@ const doLoginWithStrategy = (req, res, next, strategy = "local-auth") => {
       return;
     }
   }
-
-  passport.authenticate(strategy,  (err, user, validations) => {
+  passport.authenticate(strategy, (err, user, validations) => {
     if (err) {
       next(err)
      } else if(!user) {
       res.render("auth/login", {user: {email}, errorMessage: validations.error})
     } else {
       req.login(user, (loginError) => {
-        if(loginError){
-          next(loginError)
+        if (loginError) {
+          next(loginError);
         } else {
           res.redirect("/login")
         }
-      })
+      });
     }
-  })(req, res, next)
-}
-
+  })(req, res, next);
+};
 module.exports.doLogin = (req, res, next) => {
   doLoginWithStrategy(req, res, next)
 }
@@ -103,5 +97,5 @@ module.exports.doLoginGoogle = (req, res, next) => {
 }
 module.exports.doLogout = (req, res, next) => {
   req.session.destroy();
-  res.redirect('/login')
-}
+  res.redirect("/login");
+};
