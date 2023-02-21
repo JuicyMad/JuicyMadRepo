@@ -22,10 +22,7 @@ router.get("/", (req, res, next) => res.send("JUICY WORLD"));
 
 // auth
 router.get("/signup", authMiddleware.isNotAuthenticated, authController.signup);
-router.post(
-  "/signup",
-  authMiddleware.isNotAuthenticated,
-  authController.doSignup
+router.post("/signup",authMiddleware.isNotAuthenticated, authController.doSignup
 );
 
 router.get("/login", authMiddleware.isNotAuthenticated, authController.login);
