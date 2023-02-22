@@ -45,8 +45,6 @@ passport.use(
   )
 );
 
-
-
 module.exports.ERROR_MESSAGE = ERROR_MESSAGE;
 
 passport.use(
@@ -63,15 +61,16 @@ passport.use(
       const email = (profile.emails && profile.emails[0].value) || undefined;
 
       if (googleID && email) {
-        User.findOne({
-          $or: [{ email }, { googleID }],
-        })
+        User.findOne({ email })
           .then((user) => {
             if (user) {
               next(null, user);
             } else {
+              console.log("entro aui");
               return User.create({
-                name,
+                username: name,
+                firstName: name,
+                lastName: name,
                 email,
                 password: mongoose.Types.ObjectId(),
                 googleID,
@@ -80,7 +79,7 @@ passport.use(
               });
             }
           })
-          .catch((err) => err);
+          .catch((err) => next(err));
       } else {
         next(null, false, { error: "Error connecting with Google juicyMad" });
       }
