@@ -1,8 +1,9 @@
 <div class="content">
 <h1>Available products</h1>
 <ul>
+  
   {{#each products as |product|}}
-  <li>
+  <li >
     <a href="/products/{{product.id}}/edit">
       {{product.name}}
       /
@@ -10,9 +11,9 @@
       propierties /
       {{product.ingredients}}
       ingredients /
-      {{product.prices}}
+      {{product.price}}
       prices /
-      {{product.images}}
+      {{product.img}}
       images
     </a>
     <form action="/{{product.id}}/addToCart" method="POST">
@@ -48,3 +49,7 @@
 
 
 </div>
+
+
+    
+            
