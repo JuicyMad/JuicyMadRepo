@@ -1,39 +1,48 @@
-html{
+html {
   height: 100%;
 }
 nav {
   background-color: #a4ad48 !important;
 }
 
-
 body {
   background-color: white;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.content{
+.content {
   flex: 1;
   margin: 0;
 }
 
-.product-detail{
+.carousel-inner {
+  height: 600px;
+}
+
+.carousel-item {
+  width: 100%;
+  height: 100%;
+  position: unset;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.product-detail {
   padding: 60px;
-  
 }
-.left-side{
-padding: 15px;
+.left-side {
+  padding: 15px;
 }
 
-
-.right-side{
+.right-side {
   padding: 0;
-  height: 570px
-  
+  height: 570px;
 }
-.right-side > img{
+.right-side > img {
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -41,4 +50,43 @@ padding: 15px;
 footer {
   background-color: #a4ad48 !important;
   color: white;
+}
+
+/* CAROUSEL */
+
+.carousel-caption {
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #fff;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+.carousel-caption p {
+  width: 100%;
+}
+
+.carousel-caption h5 {
+  font-size: 60px;
+  font-weight: 900;
+}
+
+.carousel-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  filter: blur(1.5rem);
+}
+
+.text-uppercase {
+  text-align: center;
+}
+
+.col-lg-6 {
+  text-align: center;
 }
