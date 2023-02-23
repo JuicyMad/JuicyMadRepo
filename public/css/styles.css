@@ -52,6 +52,13 @@ footer {
   color: white;
 }
 
+.col-lg-6 h3 {
+  text-align: center;
+  margin-left: 110px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
 /* CAROUSEL */
 
 .carousel-caption {
@@ -83,10 +90,12 @@ footer {
   filter: blur(1.5rem);
 }
 
-.text-uppercase {
+.col-lg-6 {
   text-align: center;
 }
 
-.col-lg-6 {
-  text-align: center;
+#map {
+  width: 85%;
+  height: 180px;
+  margin-left: 100px;
 }
