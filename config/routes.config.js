@@ -83,11 +83,18 @@ router.post(
 router.get("/products/:slug", productController.detail);
 
 // cart
+router.get("/me/cart", cartController.myCart);
 router.get("/cart", cartController.cart);
 router.post(
   "/:id/addToCart",
   authMiddleware.isAuthenticated,
   cartController.editCart
-);
+); 
+
+authMiddleware.isAuthenticated, 
+router.put("/cart/products/:productId", 
+cartController.editCart );
+
+
 
 module.exports = router;
