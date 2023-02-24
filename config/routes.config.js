@@ -9,6 +9,7 @@ const productController = require("../controllers/product.controller");
 const cartController = require("../controllers/cart.controller");
 const authMiddleware = require("../middlewares/auth.middlewares");
 const adminMiddleware = require("../middlewares/admin.middleware");
+const orderController = require("../controllers/order.controller")
 
 const GOOGLE_SCOPES = [
   "https://www.googleapis.com/auth/userinfo.profile",
@@ -91,9 +92,14 @@ router.post(
   cartController.editCart
 ); 
 
-authMiddleware.isAuthenticated, 
+ 
 router.put("/cart/products/:productId", 
+authMiddleware.isAuthenticated,
 cartController.editCart );
+
+// order
+
+router.post("/user/order", authMiddleware.isAuthenticated, orderController.newOrder);
 
 
 
