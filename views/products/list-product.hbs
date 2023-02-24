@@ -1,50 +1,29 @@
-<div class="content">
-<h1>Available products</h1>
-<ul>
-  {{#each products as |product|}}
-  <li>
-    <a href="/products/{{product.id}}/edit">
-      {{product.name}}
-      /
-      {{product.propierties}}
-      propierties /
-      {{product.ingredients}}
-      ingredients /
-      {{product.prices}}
-      prices /
-      {{product.images}}
-      images
-    </a>
-    <form action="/{{product.id}}/addToCart" method="POST">
-      <button class="cart-btn">Añadir al Carrito</button>
-    </form>
-    {{#isAdmin currentUser=../currentUser}}
-    <form action="/products/{{product.id}}/delete" method="POST">
-      <button>Eliminar</button>
-    </form>
-     {{/isAdmin}}
-      {{#isAdmin currentUser=../currentUser}}
-    <form action="/products/create" method="GET">
-      <button>Crear producto</button>
-    </form>
-    <form action="/products/{{product.id}}/edit" method="GET">
-      <button>Actualizar producto</button>
-    </form>
-    
-     {{/isAdmin}}
-     
-
-
-      <a href="/products/{{product.slug}}">
-        <button>Detalle del producto </button>
-      </a>
-
-
-  </li>
-  {{/each}}
-
-</ul>
-
-
-
+<div class="card-group">
+  <div class="card">
+     {{#each products as |product|}}
+    <img src="{{product.img}}" alt="{{product.img}}-img" />
+    <a href="/products/{{product.slug}}">
+    <div class="card-body">
+      <h5 class="card-title">{{product.name}}</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="{{product.img}}" alt="{{product.img}}-img" />
+    <a href="/products/{{product.slug}}">
+    <div class="card-body">
+      <h5 class="card-title">{{product.name}}</h5>
+      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="{{product.img}}" alt="{{product.img}}-img" />
+    <div class="card-body">
+      <h5 class="card-title">{{product.name}}</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
 </div>
