@@ -1,4 +1,4 @@
-<div class="content">
+{{!-- <div class="content">
 <h1>Available products</h1>
 <ul>
   
@@ -43,12 +43,22 @@
   </li>
   {{/each}}
 
-</ul>
+</ul> --}}
 
 
 
+<div class="container my-5">
+  <div class="row">
+      {{#each products as |product|}}
+      <div class="col-lg-6 product-card gx-4">
+        <img class="shadow img" src="{{product.img}}" alt="{{product.name}}"/>
+          <div class="mt-4">
+            <h4 class="bold"> {{product.name}}</h4>   
+            <a href="/products/{{product.slug}}" class="btn btn-juicy-green" > Ver detalles</a>
+          </div>
+        </div>
+        {{/each}}
+    </div>
 </div>
 
 
-    
-            
