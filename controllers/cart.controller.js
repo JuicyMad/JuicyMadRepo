@@ -28,7 +28,6 @@ module.exports.editCart = (req, res, next) => {
   )
     .then((cartUpdated) => {
       res.json(cartUpdated.products.length)
-      console.log(cartUpdated.products.length);
 
     })
     .catch((err) => {

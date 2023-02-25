@@ -1,27 +1,30 @@
 <div class="content">
-    <h2>crear un prodcuto nuevo</h2>
-<form action="/products/create" method="POST">
-<div>
-    <label for="nombre">Nombre del prodcuto</label>
-    <input id="nombre" type="text" name="nombre" placeholder="El nombre del prodcuto es requerido" required />
-</div>
-<div>
-    <label for="propierties">Propiedades del producto</label>
-    <input id="propierties" type="text" name="propierties" required />
-</div>
-<div>
-    <label for="ingredients">Ingredientes del producto</label>
-    <input id="ingredients" type="text" name="ingredients" required />
-</div>
-<div>
-    <label for="price">Precio del producto</label>
-    <input id="price" type="number" name="price" required />
-</div>
-<div>
-    <label for="images">Imágenes del prodcuto</label>
-    <input id="images" type="files" name="images"  required />
-</div>
-<button>Crear productos</button>
-</form>
+    <div class="content-form-two">
+    <h2>Crear un prodcuto nuevo</h2>
+    <form class="admin-form" action="/products/create" method="POST">
+        <div class="input">
+            <label id="label" class="form-label" for="nombre">Nombre del prodcuto</label>
+            <input id="nombre" type="text" name="nombre" required />
+        </div>
+        <div class="input">
+            <label  id="label" class="form-label" for="propierties">Propiedades del producto</label>
+            <input id="propierties" type="text" name="propierties" required />
+        </div>
+        <div class="input">
+            <label  id="label" class="form-label" for="ingredients">Ingredientes del producto</label>
+            <input id="ingredients" type="text" name="ingredients" required />
+        </div>
+        <div class="input">
+            <label  id="label" class="form-label" for="price">Precio del producto</label>
+            <input id="price" type="number" name="price" required />
+        </div>
+        <div class="input">
+            <label  id="label" class="form-label" for="images">Imágenes del prodcuto</label>
+            <input id="images" type="files" name="images" required />
+        </div>
+        <button class="btn btn-juicy-white">Crear productos</button>
+    </form>
+
+    </div>
 
 </div>

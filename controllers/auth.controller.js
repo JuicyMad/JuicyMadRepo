@@ -56,6 +56,7 @@ module.exports.doSignup = (req, res, next) => {
     renderWithErrors({ password: "Passwords do not match" });
   }
 };
+
 module.exports.login = (req, res, next) => {
   res.render("auth/login");
 };
