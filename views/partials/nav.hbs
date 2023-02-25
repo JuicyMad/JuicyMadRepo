@@ -15,16 +15,16 @@
     <div>
       <ul   class="navbar-nav right-nav">
         {{#if currentUser}}
-        <a class="nav-link text-white" aria-current="page" href="/logout"> <i class="bi bi-box-arrow-right"></i></a>
+        <a class="nav-link text-white" aria-current="page" href="/logout"> <i id="nav-btn" class="bi bi-box-arrow-right"></i></a>
         {{else}}
         <a class="nav-link text-white" aria-current="page" href="/signup">Registrarse</a>
-        <a class="nav-link text-white" aria-current="page" href="/login"> <i class="bi bi-box-arrow-in-left"></i></a>
+        <a class="nav-link text-white" aria-current="page" href="/login"> <i id="nav-btn" class="bi bi-box-arrow-in-left"></i></a>
         {{/if}}
         <li class="nav-item">
-          <a class="nav-link text-white" href="/profile"> <i class="bi bi-person-circle"></i></a>
+          <a class="nav-link text-white" href="/profile"> <i id="nav-btn" class="bi bi-person-circle"></i></a>
         </li>
         <li class="nav-item">
-          <a  class="nav-link text-white" href="/cart"> <i class="bi bi-cart2"></i> <span id="cart-product-count" class="badge"></span></a>
+          <a  class="nav-link text-white" href="/cart"> <i id="nav-btn" class="bi bi-cart2"></i> <span id="cart-product-count" class="badge"></span></a>
         </li>
       </ul>
     </div>
