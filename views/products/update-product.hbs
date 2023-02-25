@@ -1,28 +1,28 @@
 <div class="content">
-<h2>Update the product</h2>
-<form action="/products/{{product.id}}/edit" method="POST">
-<div>
-    <label for="name">Nombre del producto</label>
-    <input value="{{product.name}}" id="name" type="text" name="name"  placeholder="Nombre del producto" required />
+    <div class="content-form-two">
+        <h2>Update the product</h2>
+        <form class="admin-form" action="/products/{{product.id}}/edit" method="POST">
+            <div class="input">
+                <label   id="label"for="name">Nombre del producto</label>
+                <input value="{{product.name}}" id="name" type="text" name="name" required />
+            </div>
+            <div class="input">
+                <label  id="label" for="propierties">Propiedades del producto</label>
+                <input value="{{product.propierties}}" id="propierties" type="text" name="Propiedades" required />
+            </div>
+            <div class="input">
+                <label  id="label" for="ingredients">Ingredientes del producto</label>
+                <input value="{{product.ingredients}}" id="ingredients" type="text" name="Ingredientes" required />
+            </div>
+            <div class="input">
+                <label  id="label" for="prices">Precio del producto</label>
+                <input value="{{product.prices}}" id="prices" type="number" name="Precio" required />
+            </div>
+            <div class="input">
+                <label  id="label" for="images">Imágen del producto</label>
+                <input value="{{product.image}}" id="images" type="files" name="Imángen" required />
+            </div>
+            <button class="btn btn-juicy-white">Crear productos</button>
+        </form>
+    </div>
 </div>
-<div>
-    <label for="propierties">Propiedades del producto</label>
-    <input value="{{product.propierties}}" id="propierties" type="text" name="Propiedades" placeholder="Propiedades de los productost" required />
-</div>
-<div>
-    <label for="ingredients">Ingredientes del producto</label>
-    <input value="{{product.ingredients}}" id="ingredients" type="text" name="Ingredientes" placeholder="Ingredients with the product" required />
-</div>
-<div>
-    <label for="prices">Precio del producto</label>
-    <input value="{{product.prices}}" id="prices" type="number" name="Precio" placeholder="Precio del producto" required />
-</div>
-<div>
-    <label for="images">Imágen del producto</label>
-    <input value="{{product.image}}" id="images" type="files" name="Imángen" placeholder="Imágen del producto" required />
-</div>
-</div>
-</form>
-
-</div>
-
