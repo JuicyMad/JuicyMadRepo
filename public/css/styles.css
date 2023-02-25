@@ -1,3 +1,43 @@
+* {
+  color: #6e6e6e;
+}
+
+.bg-light-green {
+  background-color: #c1c654;
+}
+
+.c-white {
+  color: white !important;
+}
+
+.bold {
+  font-weight: 900;
+}
+
+.btn-juicy-white {
+  background-color: white;
+  min-width: 300px;
+  color: #708b2d;
+}
+
+.btn-juicy-white:hover {
+  background-color: #708b2d;
+  min-width: 300px;
+  color: white;
+}
+
+.btn-juicy-green {
+  background-color: #c1c654;
+  min-width: 300px;
+  color: white;
+}
+
+.btn-juicy-green:hover {
+  background-color: #708b2d;
+  min-width: 300px;
+  color: white;
+}
+
 html {
   height: 100%;
 }
@@ -20,6 +60,7 @@ body {
 
 .carousel-inner {
   height: 600px;
+  color: white !important;
 }
 
 .carousel-item {
@@ -52,13 +93,6 @@ footer {
   color: white;
 }
 
-.col-lg-6 h3 {
-  text-align: center;
-  margin-left: 110px;
-  font-size: 25px;
-  font-weight: bold;
-}
-
 /* CAROUSEL */
 
 .carousel-caption {
@@ -73,11 +107,13 @@ footer {
 
 .carousel-caption p {
   width: 100%;
+  color: white !important;
 }
 
 .carousel-caption h5 {
   font-size: 60px;
   font-weight: 900;
+  color: white !important;
 }
 
 .carousel-overlay {
@@ -98,4 +134,30 @@ footer {
   width: 85%;
   height: 180px;
   margin-left: 100px;
+}
+
+/*  botton responsive */
+
+.navbar-toggler {
+  border: 1px;
+  color: black solid;
+  border-radius: 10%;
+}
+
+/* profile */
+
+.content-img {
+  background: cover;
+}
+
+.header-intro h1 {
+  font-size: 80px;
+  font-weight: 900;
+  color: #c1c654;
+}
+
+.header-intro p {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 18px;
 }
