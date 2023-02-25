@@ -27,16 +27,13 @@ module.exports.doSignup = (req, res, next) => {
           renderWithErrors({ email: "Some of your date are in use" });
         } else {
           req.body.role = "User";
-          console.log("****** ", req.body);
           return User.create(req.body).then((userCreated) => {
-            console.log("*******", userCreated);
             Cart.create({ user: userCreated._id })
               .then((cartCreated) => {
                 userCreated.cart = cartCreated._id;
                 userCreated
                   .save()
                   .then((userUpdated) => {
-                    console.log(userUpdated);
                     res.redirect("/login");
                   })
                   .catch(next);
@@ -49,7 +46,6 @@ module.exports.doSignup = (req, res, next) => {
         }
       })
       .catch((err) => {
-        console.log("****** ", err);
         if (err instanceof mongoose.Error.ValidationError) {
           renderWithErrors(err.errors);
         } else {

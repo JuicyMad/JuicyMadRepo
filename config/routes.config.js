@@ -98,9 +98,9 @@ authMiddleware.isAuthenticated,
 cartController.editCart );
 
 // order
-
+router.get("/me/order", orderController.listOrders) 
 router.post("/user/order", authMiddleware.isAuthenticated, orderController.newOrder);
-
+router.get("/order/order",authMiddleware.isAuthenticated, orderController.findOrder)
 
 
 module.exports = router;

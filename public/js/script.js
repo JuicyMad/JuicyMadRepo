@@ -1,5 +1,4 @@
 window.onload = () => {
-  
   const addCartBtns = document.querySelectorAll(".cart-btn");
   addCartBtns.forEach((button) => {
     button.addEventListener("click", function (event) {
@@ -8,7 +7,7 @@ window.onload = () => {
         .put(`/cart/products/${productId}`)
         .then((numsproducts) => {
           const cartProductCount = numsproducts.data;
-          setCartProductCount(cartProductCount)
+          setCartProductCount(cartProductCount);
         })
         .catch((err) => console.log(err));
     });
@@ -16,14 +15,14 @@ window.onload = () => {
 
   axios.get("/me/cart").then((cart) => {
     const cartProductCount = cart.data?.products?.length ?? 0;
-    setCartProductCount(cartProductCount)
+    setCartProductCount(cartProductCount);
   });
 };
 
 function setCartProductCount(count) {
-const cartProductCount = document.querySelector("#cart-product-count");
+  const cartProductCount = document.querySelector("#cart-product-count");
   if (!cartProductCount) {
     return;
   }
-  cartProductCount.innerHTML = count
+  cartProductCount.innerHTML = count;
 }

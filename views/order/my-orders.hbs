@@ -1,0 +1,15 @@
+<div class="content">
+  <h1>Lista de pedidos</h1>
+  <div>
+    {{#each userOrders as |order|}}
+    <div class="order-card">
+      {{order.status}}
+      <ul>
+        {{#each order.products as |product|}}
+        <li>{{product}}</li>
+        {{/each}}
+      </ul>
+    </div>
+    {{/each}}
+  </div>
+</div>

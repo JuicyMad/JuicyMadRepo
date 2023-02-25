@@ -5,12 +5,11 @@ module.exports.cart = (req, res, next) => {
   Cart.findById(req.user.cart)
   .populate('products')
   .then(cart => {
-    res.render("cart/cart", {cart});
+    res.render("cart/cart", {cart, products : JSON.stringify(cart.products)});
     })
     .catch(err => next(err))
 };
 module.exports.myCart = (req, res, next) => {
-  console.log("req.user.cart:",req.user.cart);
   Cart.findById(req.user.cart)
   .populate('products')
   .then(cart => {
