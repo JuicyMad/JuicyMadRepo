@@ -24,17 +24,20 @@
   background-color: #708b2d;
   min-width: 300px;
   color: white;
+  margin-top: 10px;
 }
 
 .btn-juicy-green {
   background-color: #c1c654;
-  min-width: 300px;
+  min-width: 150px;
   color: white;
+  margin-top: 10px;
 }
+
 
 .btn-juicy-green:hover {
   background-color: #708b2d;
-  min-width: 300px;
+  min-width: 150px;
   color: white;
 }
 
@@ -233,4 +236,21 @@ i{
 
 #nav-btn{
   color: white;
+}
+
+#auth{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-btn{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+.content-form{
+  width: 350px;
 }

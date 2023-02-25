@@ -3,6 +3,7 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const User = require("../models/User.model");
+const Cart = require("../models/Cart.model");
 
 passport.serializeUser((user, next) => {
   next(null, user.id);
@@ -75,7 +76,20 @@ passport.use(
                 password: mongoose.Types.ObjectId(),
                 googleID,
               }).then((userCreated) => {
-                next(null, userCreated);
+                Cart.create({ user: userCreated._id })
+                  .then((cartCreated) => {
+                    userCreated.cart = cartCreated._id;
+                    userCreated
+                      .save()
+                      .then((userUpdated) => {
+                        next(null, userUpdated);
+                      })
+                      .catch(next);
+                  })
+                  .catch((err) => {
+                    console.log(err);
+                    next(err);
+                  });
               });
             }
           })

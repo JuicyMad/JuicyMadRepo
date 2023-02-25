@@ -1,4 +1,6 @@
-<div class="content">
+<div  id="auth" class="content">
+  <div class="content-form">
+    <h1>Inicia Sesion</h1>
 <form action="/login" method="POST">
   <div class="mb-3">
     <label for="email" class="form-label">Dirección de email</label>
@@ -11,8 +13,13 @@
     <label for="password" class="form-label">Contraseña</label>
     <input type="password" class="form-control" id="password" name="password" required>
   </div>
-  <button type="submit" class="btn btn-primary">Entrar</button>
-  <a href="/login/google" class="btn btn-outline-primary">Registrase con google</a>
+
+  <div class="auth-btn">
+    <button type="submit" class="btn btn-juicy-green">Entrar</button>
+  <a href="/login/google" class="btn btn-juicy-green">Registrase con google</a>
+  </div>
 </form>
+    
+  </div>
 
 </div>
