@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="list-content">
   <h1>Productos disponibles</h1>
 
@@ -16,3 +17,60 @@
     {{/each}}
   </div>
 </div>
+=======
+<div class="content">
+<h1>Available products</h1>
+<ul>
+  
+  {{#each products as |product|}}
+  <li >
+    <a href="/products/{{product.id}}/edit">
+      {{product.name}}
+      /
+      {{product.propierties}}
+      propierties /
+      {{product.ingredients}}
+      ingredients /
+      {{product.price}}
+      prices /
+      {{product.img}}
+      images
+    </a>
+    <form action="/{{product.id}}/addToCart" method="POST">
+      <button class="cart-btn">Añadir al Carrito</button>
+    </form>
+    {{#isAdmin currentUser=../currentUser}}
+    <form action="/products/{{product.id}}/delete" method="POST">
+      <button>Eliminar</button>
+    </form>
+     {{/isAdmin}}
+      {{#isAdmin currentUser=../currentUser}}
+    <form action="/products/create" method="GET">
+      <button>Crear producto</button>
+    </form>
+    <form action="/products/{{product.id}}/edit" method="GET">
+      <button>Actualizar producto</button>
+    </form>
+    
+     {{/isAdmin}}
+     
+
+
+      <a href="/products/{{product.slug}}">
+        <button>Detalle del producto </button>
+      </a>
+
+
+  </li>
+  {{/each}}
+
+</ul>
+
+
+
+</div>
+
+
+    
+            
+>>>>>>> main
