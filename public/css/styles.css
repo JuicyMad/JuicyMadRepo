@@ -115,7 +115,9 @@ footer {
 
 .right-nav{
   align-items: center;
+  color: white;
 }
+
 
 i{
   font-size: 25px;
@@ -183,6 +185,21 @@ i{
 
 }
 
+.no-bg{
+  background-color: transparent;
+  background: transparent none;
+  border: none;
+
+}
+ 
+.admin-btn{
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  margin-top: 10px;
+
+}
+
 /*  botton responsive */
 
 .navbar-toggler {
@@ -209,3 +226,11 @@ i{
   font-size: 18px;
 }
 
+.center-product{
+  display: flex;
+  justify-content: center;
+}
+
+#nav-btn{
+  color: white;
+}
