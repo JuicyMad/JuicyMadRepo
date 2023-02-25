@@ -136,6 +136,26 @@ footer {
   margin-left: 100px;
 }
 
+
+/* products */
+
+.img {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #000;
+}
+
+.product-card {
+  background-color: white;
+  padding: 10px;
+
+}
+
 /*  botton responsive */
 
 .navbar-toggler {
@@ -161,3 +181,4 @@ footer {
   margin: 0 auto;
   font-size: 18px;
 }
+
