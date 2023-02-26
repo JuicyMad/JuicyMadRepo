@@ -1,5 +1,6 @@
-<div  id="auth" class="content">
+<div class="content">
   <div class="content-form">
+
     <h1>Iniciar Sesión</h1>
 <form action="/login" method="POST">
   <div class="mb-3">
@@ -14,12 +15,28 @@
     <input type="password" class="form-control" id="password" name="password" required>
   </div>
 
-  <div class="auth-btn">
-    <button type="submit" class="btn btn-juicy-green">Entrar</button>
-  <a href="/login/google" class="btn btn-juicy-green">Registrase con google</a>
-  </div>
-</form>
-    
+    <h2>Inicia Sesion</h2>
+    <form action="/login" class="admin-form" method="POST">
+      <div class="mb-3 input">
+        <label for="email" class="form-label">Dirección de email</label>
+        <input value="{{user.email}}" type="email" class="form-control {{#if errorMessage}}is-invalid{{/if}}" id="email"
+          name="email" aria-describedby="emailHelp" required>
+        <div class="invalid-feedback">
+          {{errorMessage}}
+        </div>
+      </div>
+      <div class="mb-3 input">
+        <label for="password" class="form-label">Contraseña</label>
+        <input type="password" class="form-control" id="password" name="password" required>
+      </div>
+
+      <div class="auth-btn">
+        <button type="submit" class="btn btn-juicy-admin">Entrar</button>
+        <a href="/login/google" class="btn btn-juicy-admin">Registrase con google</a>
+      </div>
+    </form>
+
+
   </div>
 
 </div>
