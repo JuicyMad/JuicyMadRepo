@@ -290,3 +290,33 @@ form.admin-form{
   border-radius: 10px;
   margin-bottom: 50px;
 }
+
+.user-rprofile {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+.user-profile img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+.user-profile h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+.user-profile p {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+.user-profile ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  text-align: left;
+}
+.user-profile ul li {
+  margin-bottom: 10px;
+}

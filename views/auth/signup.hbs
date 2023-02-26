@@ -3,20 +3,6 @@
   <h1>Crear cuenta</h1>
 <form action="/signup" method="POST">
 <div class="mb-3">
-  <label for="email" class="form-label">Email</label>
-  <input type="{{user.email}}" type="email" class="form-control  {{#if errors.email}}is-invalid{{/if}}" id="email" name="email" aria-describedby="emailHelp" required>
-    <div class="invalid-feedback">
-      {{errors.email}}
-    </div>
-</div>
-  <div class="mb-3">
-    <label for="username" class="form-label">Nombre de usuario</label>
-    <input value="{{user.username}}" class="form-control {{#if errors.username}}is-invalid{{/if}}" id="username" name="username" required>
-    <div class="invalid-feedback">
-      {{errors.username}}
-    </div>
-  </div>
-  <div class="mb-3">
     <label for="firstName" class="form-label">Nombre</label>
     <input value="{{user.firstName}}" class="form-control {{#if errors.firstName}}is-invalid{{/if}}" id="firstName" name="firstName" required>
     <div class="invalid-feedback">
@@ -31,6 +17,20 @@
     </div>
   </div>
   <div class="mb-3">
+    <label for="username" class="form-label">Nombre de usuario</label>
+    <input value="{{user.username}}" class="form-control {{#if errors.username}}is-invalid{{/if}}" id="username" name="username" required>
+    <div class="invalid-feedback">
+      {{errors.username}}
+    </div>
+  </div>
+  <div class="mb-3">
+  <label for="email" class="form-label">Email</label>
+  <input type="{{user.email}}" type="email" class="form-control  {{#if errors.email}}is-invalid{{/if}}" id="email" name="email" aria-describedby="emailHelp" required>
+    <div class="invalid-feedback">
+      {{errors.email}}
+    </div>
+</div>
+<div class="mb-3">
     <label for="password" class="form-label">Contraseña</label>
     <input type="password" class="form-control {{#if errors.password}}is-invalid{{/if}}" id="password" name="password" required>
     <div class="invalid-feedback">
@@ -38,7 +38,7 @@
     </div>
   </div>
   <div class="mb-3">
-    <label for="repeat-password" class="form-label">Repita Contraseña</label>
+    <label for="repeat-password" class="form-label">Repetir Contraseña</label>
     <input type="password" class="form-control" id="repeat-password" name="repeatPassword" required>
   </div>
   <button type="submit" class="btn btn-juicy-green">Crear cuenta</button>
