@@ -22,10 +22,12 @@
   background-color: white;
   min-width: 150px;
   color: #708b2d;
+  margin-top: 30px;
 }
 
 .btn-juicy-white:hover {
   background-color: #708b2d;
+
   color: white;
 }
 
@@ -33,11 +35,15 @@
   background-color: #c1c654;
   min-width: 150px;
   color: white;
+  margin-top: 30px;
 }
+
 
 .btn-juicy-green:hover {
   background-color: #708b2d;
+
   color: white;
+ 
 }
 
 html {
@@ -111,6 +117,35 @@ footer .copyright {
   color: white;
 }
 
+
+/* nav  */
+.badge {
+  background-color: #98cfdb;
+  border-radius: 10px;
+  color: white;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 1;
+  padding: 3px 5px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  
+}
+
+.left-nav{
+ flex: 1;
+}
+
+.right-nav{
+  align-items: center;
+  color: white;
+}
+
+
+i{
+  font-size: 25px;
+}
 /* CAROUSEL */
 
 .carousel-caption {
@@ -160,12 +195,27 @@ footer .copyright {
   height: 250px;
   object-fit: cover;
   border-radius: 50%;
-  border: 2px solid #000;
+
 }
 
 .product-card {
   background-color: white;
   padding: 10px;
+}
+
+.no-bg{
+  background-color: transparent;
+  background: transparent none;
+  border: none;
+
+}
+ 
+.admin-btn{
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  margin-top: 10px;
+
 }
 
 /*  botton responsive */
@@ -191,6 +241,68 @@ footer .copyright {
   margin-top: 30px;
 }
 
+
 .header-intro img {
   max-width: 300px;
 }
+=======
+.center-product{
+  display: flex;
+  justify-content: center;
+}
+
+#nav-btn{
+  color: white;
+}
+
+#auth{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-btn{
+  justify-content: center;
+  flex-direction: column;
+  
+}
+
+
+.content-form{
+  width: 350px;
+}
+
+.content-form-two{
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+ 
+}
+#label{
+  margin-top: 10px;
+}
+
+.input{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.input > input{
+  border-radius: 4px;
+  border: 1px solid #6e6e6e;
+  padding: 5px 10px;
+  margin-left: 15px;
+}
+
+form.admin-form{
+  background-color: #a4ad48 ;
+  padding: 40px;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 50px;
+}
+

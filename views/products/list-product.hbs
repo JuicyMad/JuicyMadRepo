@@ -1,15 +1,35 @@
-<div class="container my-5">
+<div class="center-products">
+  <div class="container my-5">
+  <h1>Available products</h1>
   <div class="row">
-      {{#each products as |product|}}
-      <div class="col-lg-6 product-card gx-4">
-        <img class="shadow img" src="{{product.img}}" alt="{{product.name}}"/>
-          <div class="mt-4">
-            <h4 class="bold"> {{product.name}}</h4>   
-            <a href="/products/{{product.slug}}" class="btn btn-juicy-green" > Ver detalles</a>
-          </div>
+    {{#each products as |product|}}
+    <div class="col-lg-6 product-card gx-4">
+      <img class="shadow img" src="{{product.img}}" alt="{{product.name}}" />
+      <div class="mt-4">
+        <h4 class="bold"> {{product.name}}</h4>
+        <a href="/products/{{product.slug}}" class="btn btn-juicy-green"> Ver detalles</a>
+        <div class="admin-btn">
+          <button class="cart-btn no-bg" data-productid="{{product.id}}"><i class="bi bi-cart-plus"></i></button>
+        {{#isAdmin currentUser=../currentUser}}
+        <form action="/products/{{product.id}}/delete" method="POST">
+          <button class="no-bg"><i class="bi bi-trash3"></i></button>
+        </form>
+        {{/isAdmin}}
+        {{#isAdmin currentUser=../currentUser}}
+        <form action="/products/create" method="GET">
+          <button class="no-bg"><i class="bi bi-plus-circle"></i></button>
+        </form>
+        <form action="/products/{{product.id}}/edit" method="GET">
+          <button class="no-bg"><i class="bi bi-arrow-clockwise"></i></button>
+        </form>
+
+        {{/isAdmin}}
         </div>
-        {{/each}}
+
+
+      </div>
     </div>
+    {{/each}}
+  </div>
 </div>
-
-
+</div>
