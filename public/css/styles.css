@@ -14,33 +14,28 @@
   font-weight: 900;
 }
 
-.btn-juicy-white {
-  background-color: white;
-  min-width: 150px;
-  color: #708b2d;
+button.btn{
+  min-width: 195px;
   margin-top: 30px;
 }
 
-.btn-juicy-white:hover {
+.auth-btn > button{
+  margin: 0 15px 0 0;
+}
+
+.btn-juicy-admin, .btn-juicy-white:hover, .btn-juicy-green:hover {
   background-color: #708b2d;
-  min-width: 150px;
   color: white;
-  margin-top: 30px;
+}
+
+.btn-juicy-white, .btn-juicy-admin:hover {
+  background-color: white;
+  color: #708b2d;
 }
 
 .btn-juicy-green {
   background-color: #c1c654;
-  min-width: 150px;
   color: white;
-  margin-top: 30px;
-}
-
-
-.btn-juicy-green:hover {
-  background-color: #708b2d;
-  min-width: 150px;
-  color: white;
-  margin-top: 30px;
 }
 
 html {
@@ -194,7 +189,7 @@ i{
   background-color: transparent;
   background: transparent none;
   border: none;
-
+  padding: 8px 10px;
 }
  
 .admin-btn{
@@ -240,51 +235,45 @@ i{
   color: white;
 }
 
-#auth{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .auth-btn{
-  justify-content: center;
-  flex-direction: column;
-  
+  margin-top: 30px;
+  text-align: center;
 }
 
 
 .content-form{
-  width: 350px;
-}
-
-.content-form-two{
   flex-direction: column;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 40px;
- 
 }
-#label{
-  margin-top: 10px;
+
+.content-form > h2, .title{
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.input > label{
+  margin: 10px 0 5px;
+  color: #fff;
 }
 
 .input{
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 10px;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .input > input{
   border-radius: 4px;
-  border: 1px solid #6e6e6e;
+  border: 1px solid #708b2d;
   padding: 5px 10px;
-  margin-left: 15px;
+  width: 500px;
 }
 
 form.admin-form{
-  background-color: #a4ad48 ;
+  background-color: #c1c654 ;
   padding: 40px;
   text-align: center;
   border-radius: 10px;
