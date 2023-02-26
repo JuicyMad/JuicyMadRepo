@@ -50,7 +50,7 @@ if (navigator.geolocation) {
         container: "map",
         style: "mapbox://styles/mapbox/streets-v12",
         center: [center.lng, center.lat],
-        zoom: 18,
+        zoom: 12,
       });
 
       const marker2 = new mapboxgl.Marker({ color: "green" })
