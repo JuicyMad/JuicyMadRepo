@@ -1,25 +1,25 @@
 const { distinct } = require("../models/Cart.model");
 const Cart = require("../models/Cart.model");
 const Product = require("../models/Product.model");
-const getDistinctProductsWithCount = require("../public/js/get-distinct-products-with-count")
+const getDistinctProductsWithCount = require("../public/js/get-distinct-products-with-count");
 
 module.exports.cart = (req, res, next) => {
   Cart.findById(req.user.cart)
-  .populate('products')
-  .then(cart => {
-    cart['distinctProducts'] = getDistinctProductsWithCount(cart.products)
-    res.render("cart/cart", {cart});
+    .populate("products")
+    .then((cart) => {
+      cart["distinctProducts"] = getDistinctProductsWithCount(cart.products);
+      res.render("cart/cart", { cart });
     })
-    .catch(err => next(err))
+    .catch((err) => next(err));
 };
 module.exports.myCart = (req, res, next) => {
   Cart.findById(req.user.cart)
-  .populate('products')
-  .then(cart => {
-    console.log({cart});
-    res.json(cart) ;
+    .populate("products")
+    .then((cart) => {
+      console.log({ cart });
+      res.json(cart);
     })
-    .catch(err => next(err))
+    .catch((err) => next(err));
 };
 
 module.exports.editCart = (req, res, next) => {
@@ -30,8 +30,7 @@ module.exports.editCart = (req, res, next) => {
     { upsert: true, new: true }
   )
     .then((cartUpdated) => {
-      res.json(cartUpdated.products.length)
-
+      res.json(cartUpdated.products.length);
     })
     .catch((err) => {
       console.log(err);

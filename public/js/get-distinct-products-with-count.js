@@ -5,6 +5,8 @@ function getDistinctProductsWithCount(products){
          distinctProducts[currentProduct._id] = {
            _id: currentProduct._id,
            name: currentProduct.name,
+           img: currentProduct.img,
+           status: currentProduct.status,
            count: 1,
          };
          return distinctProducts;
@@ -13,6 +15,8 @@ function getDistinctProductsWithCount(products){
        distinctProducts[currentProduct._id] = {
          _id: repetedProduct._id,
          name: repetedProduct.name,
+         img: currentProduct.img,
+         status: currentProduct.status,
          count: repetedProduct.count + 1,
        };
        return distinctProducts;

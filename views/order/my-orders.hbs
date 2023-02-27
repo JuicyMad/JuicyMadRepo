@@ -1,16 +1,27 @@
 <div class="content">
-  <div class="content-form">
-  <h1>Lista de pedidos</h1>
+    <h1>Lista de pedidos</h1>
+  <div class="order ">
     {{#each userOrders as |order|}}
     <div class="order-card">
-      <a class="a-tag" href="order/order">{{order.status}}</a>
-      <ul>
-        {{#each order.distinctProducts as |product|}}
+      <p>{{order.status}}</p>
 
-        <h6 class="order-list" >{{product.name}} {{product.count}}</h6>
-        {{/each}}
-      </ul>
+
+      {{#each order.distinctProducts as |product|}}
+     <div class="product-order">
+       <h6>{{product.name}} ×  {{product.count}}</h6>
+       <div class="order-img">
+      <img src="{{product.img}}" alt="{{product.img}}">
+
+       </div>
+     </div>
+      
+      {{/each}}
     </div>
     {{/each}}
   </div>
 </div>
+      {{!-- <select name="select">
+        <option value="value1">o</option>
+        <option value="value2" selected>{{order.status}}</option>
+        <option value="value3">Value 3</option>
+      </select> --}}

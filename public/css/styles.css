@@ -311,7 +311,38 @@ form.admin-form{
   list-style: none;
 }
 
-h6{
-
+.order-card{
+  background-color: #c1c654 ;
+  padding: 40px;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 50px;;
+  color: white;
 }
 
+.order-img > img{
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 50;
+  height: 50;
+  object-fit: cover;
+  border-radius: 50%; 
+  margin-left: 15px;
+}
+
+.product-order{
+  display: flex;
+  align-items: baseline;
+
+}
+.order{
+  display: flex;
+  margin-top: 15px;
+  justify-content: center;
+  justify-content: space-evenly;
+
+}
+p, h6{
+  color: white;
+}
