@@ -132,6 +132,9 @@ footer .copyright {
   
 }
 
+#font{
+  font-size: larger;
+}
 .left-nav{
  flex: 1;
 }
@@ -312,12 +315,13 @@ form.admin-form{
 }
 
 .order-card{
-  background-color: #c1c654 ;
+  background-color: #c1c654;
   padding: 40px;
   text-align: center;
   border-radius: 10px;
-  margin-bottom: 50px;;
+  margin-bottom: 50px;
   color: white;
+  width: 365px;
 }
 
 .order-img > img{
@@ -334,6 +338,7 @@ form.admin-form{
 .product-order{
   display: flex;
   align-items: baseline;
+  justify-content: space-between;
 
 }
 .order{
@@ -341,8 +346,13 @@ form.admin-form{
   margin-top: 15px;
   justify-content: center;
   justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 20px
 
 }
 p, h6{
   color: white;
+}
+#h1-order{
+  margin-top: 30px;
 }

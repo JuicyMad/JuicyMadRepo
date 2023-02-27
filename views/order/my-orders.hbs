@@ -1,20 +1,22 @@
 <div class="content">
-    <h1>Lista de pedidos</h1>
+    <h1 id="h1-order"
+    class="title">Lista de pedidos</h1>
   <div class="order ">
     {{#each userOrders as |order|}}
     <div class="order-card">
       <p>{{order.status}}</p>
 
-
+<hr>
       {{#each order.distinctProducts as |product|}}
      <div class="product-order">
        <h6>{{product.name}} ×  {{product.count}}</h6>
+
        <div class="order-img">
       <img src="{{product.img}}" alt="{{product.img}}">
 
        </div>
      </div>
-      
+      <hr>
       {{/each}}
     </div>
     {{/each}}

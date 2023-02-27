@@ -4,7 +4,7 @@
   <ul>
   {{cart.products.length}}
   {{#each cart.distinctProducts as |product|}}
-    <li>{{product.name}}  {{product.count}}</li>
+    <li>{{product.name}}  × {{product.count}}</li>
   {{/each}}
 </ul>
 <form action="/user/order" method="POST">
