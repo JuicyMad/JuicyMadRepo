@@ -39,6 +39,7 @@ button.btn{
   background-color: #708b2d;
 
   color: white;
+}
 
 .btn-juicy-white, .btn-juicy-admin:hover {
   background-color: white;
@@ -274,12 +275,6 @@ i {
   flex-direction: column;
 }
 
-.content-form {
-  width: 350px;
-}
-
-.content-form-two {
-
 .auth-btn{
   margin-top: 30px;
   text-align: center;
@@ -408,7 +403,7 @@ form.admin-form{
   width: 365px;
 }
 
-.order-img > img{
+.order-img > img, .cart-img > img{
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -432,13 +427,39 @@ form.admin-form{
   justify-content: space-evenly;
   flex-wrap: wrap;
   gap: 20px
-
 }
-p, h6{
+/* p, h6{
   color: white;
-}
+} */
 #h1-order{
   margin-top: 30px;
 }
+.cart{
+  width: 500px;
+}
+.cart-img{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid #fff;
+}
+.cart-img > div{
+  text-align: left;
+}
+.order-card > p, .order-card > .product-order > h6{
+  color: #fff;
+}
 
+.cart-img > div > p{
+  margin: 0;
+  color: #606f72;
+}
+.cart-img > div > h6{
+  margin: 0;
+  color: #fff;
+}
 
+.subtitle{
+  text-align: center;
+}

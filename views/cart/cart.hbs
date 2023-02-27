@@ -1,22 +1,58 @@
-<div class="content-detail"
-   style="background-image: url('./images/pattern.png');"
-      >
-<h1>Cart</h1>
-  <ul>
+<div class="content">
 
-  {{cart.products.lenght}}
-  {{#each cart.distinctProducts as |product|}}
-   <li>{{product.name}}  × {{product.count}}</li>
-     <img class="shadow img" src="{{product.img}}" alt="{{product.name}}" />  
-     <p style="color: #98cfdb"> Precio: {{product.price}}€</p>
+  <h1 id="h1-order" class="title"> Carrito</h1>
+  <h5 class="subtitle">Numero de productos: {{cart.products.length}}</h5>
+  <div class="order ">
+  <div class="order-card cart">
+    {{#each cart.distinctProducts as |product|}}
+    <div class="cart-img">
+      <div>
+        <h6>{{product.name}} × {{product.count}}</h6>
+        <p> Precio: {{product.price}}€</p>
+      </div>
+      <img class="shadow img" src="{{product.img}}" alt="{{product.name}}" />
+    </div>
+
+
+    {{/each}}
+    </ul>
+    <form action="/user/order" method="POST">
+      <button type="submit" class="btn btn-juicy-admin" data-product-list="{{product}}">Crear pedido</a>
+
+
+    </form>
+
+
+  </div>
+  </div>
+</div>
+
+
+
+{{!-- <div class="content-detail content">
+  <h1>Carrito</h1>
+  <div class="order">
+    {{#each cart.distinctProducts as |product|}}
+    <div class="order-card">
+      <p>Numero de productos: {{cart.products.length}}</p>
+      <hr>
+      <h6 class="product-order">{{product.name}} × {{product.count}}</h6>
+      <div class="order-img">
+        <img class="shadow img" src="{{product.img}}" alt="{{product.name}}" />
+        <p style="color: #98cfdb"> Precio: {{product.price}}</p>
+      </div>
+      <ul>
+
+        <form action="/user/order" method="POST">
+          <button class="btn btn-juicy-admin" type="submit" class="create-btn" data-product-list="{{product}}">Crear
+            pedido</a>
+        </form>
+    </div>
+
+  </div>
 
   {{/each}}
-</ul>
-<form action="/user/order" method="POST">
-  <button type="submit" class="create-btn"  data-product-list="{{product}}">Crear pedido</a>
-  
-
-</form>
+  </ul>
 
 
-</div>
+</div> --}}
