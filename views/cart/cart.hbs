@@ -2,14 +2,15 @@
 <h1>Cart</h1>
 
   <ul>
-  {{cart.products.lenght}}
-  {{#each cart.products as |product|}}
-    <li>{{product.name}}</li>
+  {{cart.products.length}}
+  {{#each cart.distinctProducts as |product|}}
+    <li>{{product.name}}  {{product.count}}</li>
   {{/each}}
 </ul>
 <form action="/user/order" method="POST">
   <button type="submit" class="create-btn" data-product-list="{{products}}">Crear pedido</a>
 
 </form>
+
 
 </div>
