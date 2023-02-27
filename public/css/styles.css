@@ -304,6 +304,51 @@ form.admin-form{
 }
 
 
+	/* Estilos para la imagen de perfil */
+
+.profile img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    font-variant-position:18px;
+    color: #555;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    margin: 20px auto;
+  
+  }
+.profile h4 {
+    background-color: #c1c654 ;
+    text-align: center;
+    height: 50px;
+    padding: 12px;
+    margin-top: 14px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    margin: 20px auto;
+    
+  }
+
+  .profile h1 {
+    text-align: center;
+  }
+
+
+
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
 .a-tag{
   text-decoration: none;
   color: #708b2d;
@@ -356,3 +401,4 @@ p, h6{
 #h1-order{
   margin-top: 30px;
 }
+
