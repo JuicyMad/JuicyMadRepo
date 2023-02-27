@@ -4,8 +4,11 @@
     <p class="lead">{{product.propierties}} </p>
     <h4 class="text-capitalize"> Categoria: {{product.category}}</h4>
     <p style="color: #98cfdb" class="text-capitalize"> Ingredientes: {{product.ingredients}}</p>
-    <p style="color: #98cfdb"> Precio: {{product.price}}</p>
+
+    <p style="color: #98cfdb"> Precio: {{product.price}}€</p>
+
     <button class="cart-btn no-bg" data-productid="{{product.id}}"><i class="bi bi-cart-plus"></i></button>
+
   </div>
   <div class="col-md-6 right-side">
     <img src="{{product.img}}" alt="{{product.name}}" class="w-100 shadow"
@@ -13,5 +16,8 @@
       role="img"></img>
 
   </div>
+
+
+  
 </div>
 

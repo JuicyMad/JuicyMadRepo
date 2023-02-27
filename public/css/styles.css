@@ -34,6 +34,12 @@ button.btn{
   color: white;
 }
 
+
+.btn-juicy-green:hover {
+  background-color: #708b2d;
+
+  color: white;
+
 .btn-juicy-white, .btn-juicy-admin:hover {
   background-color: white;
   color: #708b2d;
@@ -116,7 +122,6 @@ footer .copyright {
   color: white;
 }
 
-
 /* nav  */
 .badge {
   background-color: #98cfdb;
@@ -129,8 +134,8 @@ footer .copyright {
   text-align: center;
   vertical-align: middle;
   white-space: nowrap;
-  
 }
+
 
 #font{
   font-size: larger;
@@ -139,13 +144,12 @@ footer .copyright {
  flex: 1;
 }
 
-.right-nav{
+.right-nav {
   align-items: center;
   color: white;
 }
 
-
-i{
+i {
   font-size: 25px;
 }
 /* CAROUSEL */
@@ -197,7 +201,6 @@ i{
   height: 250px;
   object-fit: cover;
   border-radius: 50%;
-
 }
 
 .product-card {
@@ -206,19 +209,19 @@ i{
   text-align: center;
 }
 
-.no-bg{
+.no-bg {
   background-color: transparent;
   background: transparent none;
   border: none;
   padding: 8px 10px;
+
 }
- 
-.admin-btn{
+
+.admin-btn {
   display: flex;
   justify-content: center;
   align-items: baseline;
   margin-top: 10px;
-
 }
 
 /*  botton responsive */
@@ -244,19 +247,38 @@ i{
   margin-top: 30px;
 }
 
-
 .header-intro img {
   max-width: 300px;
 }
+
+
 
 .center-product{
   display: flex;
   justify-content: center;
 }
 
-#nav-btn{
+#nav-btn {
   color: white;
 }
+
+
+#auth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-btn {
+  justify-content: center;
+  flex-direction: column;
+}
+
+.content-form {
+  width: 350px;
+}
+
+.content-form-two {
 
 .auth-btn{
   margin-top: 30px;
@@ -264,13 +286,15 @@ i{
 }
 
 
-.content-form{
+.content-form{ 
   flex-direction: column;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 40px;
 }
+
+
 
 .content-form > h2, .title{
   text-align: center;
@@ -282,18 +306,19 @@ i{
   color: #fff;
 }
 
-.input{
+.input {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-.input > input{
+.input > input {
   border-radius: 4px;
   border: 1px solid #708b2d;
   padding: 5px 10px;
   width: 500px;
 }
+
 
 form.admin-form{
   background-color: #c1c654 ;
@@ -301,6 +326,20 @@ form.admin-form{
   text-align: center;
   border-radius: 10px;
   margin-bottom: 50px;
+}
+
+
+/* boton de crear pedido y bground */
+
+.create-btn {
+  background-color: #a4ad48;
+  color: white;
+  margin-left: 30px;
+}
+
+.content-detail {
+  background-position: center;
+  background-size: cover;
 }
 
 
@@ -401,4 +440,5 @@ p, h6{
 #h1-order{
   margin-top: 30px;
 }
+
 
