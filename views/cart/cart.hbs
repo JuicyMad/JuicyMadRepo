@@ -3,10 +3,13 @@
       >
 <h1>Cart</h1>
   <ul>
+
   {{cart.products.lenght}}
-  {{#each cart.products as |product|}}
-     <img class="shadow img" src="{{product.img}}" alt="{{product.name}}" /> <li>{{product.name}}</li> 
+  {{#each cart.distinctProducts as |product|}}
+   <li>{{product.name}}  × {{product.count}}</li>
+     <img class="shadow img" src="{{product.img}}" alt="{{product.name}}" />  
      <p style="color: #98cfdb"> Precio: {{product.price}}€</p>
+
   {{/each}}
 </ul>
 <form action="/user/order" method="POST">
@@ -14,5 +17,6 @@
   
 
 </form>
+
 
 </div>

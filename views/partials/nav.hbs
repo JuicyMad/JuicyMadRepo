@@ -8,7 +8,7 @@
     <div class="left-nav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link text-white" href="/products">Productos</a>
+          <a  id="font"class="nav-link text-white " href="/products">Productos</a>
         </li>
       </ul>
     </div>
@@ -17,7 +17,7 @@
         {{#if currentUser}}
         <a class="nav-link text-white" aria-current="page" href="/logout"> <i id="nav-btn" class="bi bi-box-arrow-right"></i></a>
         {{else}}
-        <a class="nav-link text-white" aria-current="page" href="/signup">Registrarse</a>
+        <a id="font" class="nav-link text-white " aria-current="page" href="/signup">Registrarse</a>
         <a class="nav-link text-white" aria-current="page" href="/login"> <i id="nav-btn" class="bi bi-box-arrow-in-left"></i></a>
         {{/if}}
         <li class="nav-item">
@@ -26,6 +26,7 @@
         <li class="nav-item">
           <a  class="nav-link text-white" href="/cart"> <i id="nav-btn" class="bi bi-cart2"></i> <span id="cart-product-count" class="badge"></span></a>
         </li>
+
       </ul>
     </div>
   </div>

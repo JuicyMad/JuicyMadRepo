@@ -18,30 +18,37 @@
   font-weight: 900;
 }
 
-.btn-juicy-white {
-  background-color: white;
-  min-width: 150px;
-  color: #708b2d;
+button.btn{
+  min-width: 195px;
   margin-top: 30px;
 }
 
-.btn-juicy-white:hover {
+
+.auth-btn > button{
+  margin: 0 15px 0 0;
+
+}
+
+.btn-juicy-admin, .btn-juicy-white:hover, .btn-juicy-green:hover {
   background-color: #708b2d;
-
   color: white;
 }
 
-.btn-juicy-green {
-  background-color: #c1c654;
-  min-width: 150px;
-  color: white;
-  margin-top: 30px;
-}
 
 .btn-juicy-green:hover {
   background-color: #708b2d;
 
   color: white;
+
+.btn-juicy-white, .btn-juicy-admin:hover {
+  background-color: white;
+  color: #708b2d;
+}
+
+.btn-juicy-green {
+  background-color: #c1c654;
+  color: white;
+
 }
 
 html {
@@ -129,8 +136,12 @@ footer .copyright {
   white-space: nowrap;
 }
 
-.left-nav {
-  flex: 1;
+
+#font{
+  font-size: larger;
+}
+.left-nav{
+ flex: 1;
 }
 
 .right-nav {
@@ -195,12 +206,15 @@ i {
 .product-card {
   background-color: white;
   padding: 10px;
+  text-align: center;
 }
 
 .no-bg {
   background-color: transparent;
   background: transparent none;
   border: none;
+  padding: 8px 10px;
+
 }
 
 .admin-btn {
@@ -236,7 +250,10 @@ i {
 .header-intro img {
   max-width: 300px;
 }
-======= .center-product {
+
+
+
+.center-product{
   display: flex;
   justify-content: center;
 }
@@ -244,6 +261,7 @@ i {
 #nav-btn {
   color: white;
 }
+
 
 #auth {
   display: flex;
@@ -261,37 +279,55 @@ i {
 }
 
 .content-form-two {
+
+.auth-btn{
+  margin-top: 30px;
+  text-align: center;
+}
+
+
+.content-form{ 
   flex-direction: column;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 40px;
 }
-#label {
-  margin-top: 10px;
+
+
+
+.content-form > h2, .title{
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.input > label{
+  margin: 10px 0 5px;
+  color: #fff;
 }
 
 .input {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 10px;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .input > input {
   border-radius: 4px;
-  border: 1px solid #6e6e6e;
+  border: 1px solid #708b2d;
   padding: 5px 10px;
-  margin-left: 15px;
+  width: 500px;
 }
 
-form.admin-form {
-  background-color: #a4ad48;
+
+form.admin-form{
+  background-color: #c1c654 ;
   padding: 40px;
   text-align: center;
   border-radius: 10px;
   margin-bottom: 50px;
 }
+
 
 /* boton de crear pedido y bground */
 
@@ -305,3 +341,104 @@ form.admin-form {
   background-position: center;
   background-size: cover;
 }
+
+
+	/* Estilos para la imagen de perfil */
+
+.profile img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    font-variant-position:18px;
+    color: #555;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    margin: 20px auto;
+  
+  }
+.profile h4 {
+    background-color: #c1c654 ;
+    text-align: center;
+    height: 50px;
+    padding: 12px;
+    margin-top: 14px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    margin: 20px auto;
+    
+  }
+
+  .profile h1 {
+    text-align: center;
+  }
+
+
+
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+.a-tag{
+  text-decoration: none;
+  color: #708b2d;
+  font-size: 20px;
+}
+
+.order-list{
+  list-style: none;
+}
+
+.order-card{
+  background-color: #c1c654;
+  padding: 40px;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 50px;
+  color: white;
+  width: 365px;
+}
+
+.order-img > img{
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 50;
+  height: 50;
+  object-fit: cover;
+  border-radius: 50%; 
+  margin-left: 15px;
+}
+
+.product-order{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+
+}
+.order{
+  display: flex;
+  margin-top: 15px;
+  justify-content: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 20px
+
+}
+p, h6{
+  color: white;
+}
+#h1-order{
+  margin-top: 30px;
+}
+
+
