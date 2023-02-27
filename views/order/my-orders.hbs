@@ -1,12 +1,13 @@
 <div class="content">
+  <div class="content-form">
   <h1>Lista de pedidos</h1>
-  <div>
     {{#each userOrders as |order|}}
     <div class="order-card">
-      {{order.status}}
+      <a class="a-tag" href="order/order">{{order.status}}</a>
       <ul>
-        {{#each order.products as |product|}}
-        <li>{{product}}</li>
+        {{#each order.distinctProducts as |product|}}
+
+        <h6 class="order-list" >{{product.name}} {{product.count}}</h6>
         {{/each}}
       </ul>
     </div>
