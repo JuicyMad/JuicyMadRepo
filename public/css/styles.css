@@ -132,6 +132,9 @@ footer .copyright {
   
 }
 
+#font{
+  font-size: larger;
+}
 .left-nav{
  flex: 1;
 }
@@ -300,6 +303,7 @@ form.admin-form{
   margin-bottom: 50px;
 }
 
+
 	/* Estilos para la imagen de perfil */
 
 .profile img {
@@ -343,3 +347,58 @@ form.admin-form{
     align-items: center;
     justify-content: center;
   }
+
+
+.a-tag{
+  text-decoration: none;
+  color: #708b2d;
+  font-size: 20px;
+}
+
+.order-list{
+  list-style: none;
+}
+
+.order-card{
+  background-color: #c1c654;
+  padding: 40px;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 50px;
+  color: white;
+  width: 365px;
+}
+
+.order-img > img{
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 50;
+  height: 50;
+  object-fit: cover;
+  border-radius: 50%; 
+  margin-left: 15px;
+}
+
+.product-order{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+
+}
+.order{
+  display: flex;
+  margin-top: 15px;
+  justify-content: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 20px
+
+}
+p, h6{
+  color: white;
+}
+#h1-order{
+  margin-top: 30px;
+}
+

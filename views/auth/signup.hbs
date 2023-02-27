@@ -3,6 +3,22 @@
     <h2>Crear cuenta</h2>
     <form action="/signup" class="admin-form" method="POST">
       <div class="mb-3 input">
+        <label for="firstName" class="form-label">Nombre</label>
+        <input value="{{user.firstName}}" class="form-control {{#if errors.firstName}}is-invalid{{/if}}" id="firstName"
+          name="firstName" required>
+        <div class="invalid-feedback">
+          {{errors.firstName}}
+        </div>
+      <div class="mb-3 input">
+        <label for="lastName" class="form-label">Apellidos</label>
+        <input value="{{user.lastName}}" class="form-control {{#if errors.lastName}}is-invalid{{/if}}" id="lastName"
+          name="lastName" required>
+        <div class="invalid-feedback">
+          {{errors.lastName}}
+        </div>
+      </div>
+      </div>
+      <div class="mb-3 input">
         <label for="email" class="form-label">Email</label>
         <input type="{{user.email}}" type="email" class="form-control  {{#if errors.email}}is-invalid{{/if}}" id="email"
           name="email" aria-describedby="emailHelp" required>
@@ -16,22 +32,6 @@
           name="username" required>
         <div class="invalid-feedback">
           {{errors.username}}
-        </div>
-      </div>
-      <div class="mb-3 input">
-        <label for="firstName" class="form-label">Nombre</label>
-        <input value="{{user.firstName}}" class="form-control {{#if errors.firstName}}is-invalid{{/if}}" id="firstName"
-          name="firstName" required>
-        <div class="invalid-feedback">
-          {{errors.firstName}}
-        </div>
-      </div>
-      <div class="mb-3 input">
-        <label for="lastName" class="form-label">Apellidos</label>
-        <input value="{{user.lastName}}" class="form-control {{#if errors.lastName}}is-invalid{{/if}}" id="lastName"
-          name="lastName" required>
-        <div class="invalid-feedback">
-          {{errors.lastName}}
         </div>
       </div>
       <div class="mb-3 input">
