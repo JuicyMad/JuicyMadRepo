@@ -21,34 +21,35 @@ module.exports.newOrder = (req, res, next) => {
         });
         
       } else{
-        res.status(400).redirect("/home")
+        res.status(400).redirect("/products")
       }
     })
     .catch(next);
 };
 
-module.exports.findOrder = (req, res, next) => {
-  Order.findById(req.user.order)
-    .then((order) => {
-      res.render("order/order", { order });
-    })
-    .catch((err) => next(err));
-};
 
 module.exports.listOrders = (req, res, next) => {
   Order.find({ user: req.user.id })
-    .populate("products")
-    .then((userOrders) => {
-      const orders = userOrders.map((order) => {
-        const products = order.products;
-        order.distinctProducts = getDistinctProductsWithCount(products)
-       
-        return order;
-      });
-      console.log({ orders });
-      res.render("order/my-orders", { userOrders: orders });
+  .populate("products")
+  .then((userOrders) => {
+    const orders = userOrders.map((order) => {
+      const products = order.products;
+      order.distinctProducts = getDistinctProductsWithCount(products)
+      
+      return order;
+    });
+    console.log({ orders });
+    res.render("order/my-orders", { userOrders: orders });
+  })
+  .catch((err) => console.log(err));
+};
+module.exports.findOrder = (req, res, next) => {
+  Order.findById(req.user.order)
+  console.log(req.user.order)
+    .then((order) => {
+      res.render("order/order", { order : order.products });
     })
-    .catch((err) => console.log(err));
+    .catch((err) => next(err));
 };
 
 
