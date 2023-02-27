@@ -14,8 +14,8 @@ const orderSchema = new mongoose.Schema(
     },
     status: {
       type: String,
-      enum: ["Order accepted","In process", "On the way", "Delivered"],
-      default: "Order accepted"
+      enum: ["Pedido aceptado","En proceso", "En camino", "Entregado"],
+      default: "Pedido aceptado"
     },
   },
   {
